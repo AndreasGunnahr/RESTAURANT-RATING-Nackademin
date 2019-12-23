@@ -1,0 +1,138 @@
+@import '_global';
+
+.header__container{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $dark-blue;
+    a{  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $text-font;
+        font-size: 1.3rem;
+        padding: 20px 30px 20px 30px;
+        color: $light-blue;
+        i{
+            padding-right: 5px;
+        }
+        &::after{
+            font-family: "FontAwesome"; 
+            font-weight: 500; 
+            content: "\f078";
+            margin-left: 5px;
+    
+        }
+    }
+    button{
+        padding: 10px 20px 10px 20px;
+        background: $red;
+        color: $white;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        border-radius: 20px;
+        border:none;
+    }
+}
+
+.main__container{
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: 320px 1fr;
+    background: $dark-dark-blue;
+    padding: 5%;
+    .sidebar{ 
+        grid-row: 1;
+        grid-column: 1;
+        background: $white;
+        margin-right: 20px;
+        background: $dark-blue;
+        .cuisine,
+        .region{
+            padding: 20px 30px 20px 30px;
+            border-bottom: 1px solid $light-blue;
+            a{  
+                font-size: 1.8rem;
+                font-family: $header-font;
+                color: $light-blue;
+                letter-spacing: 1px;
+                i{
+                    margin-right: 10px;
+                }
+                &::after{
+                    font-family: "FontAwesome"; 
+                    font-weight: 500; 
+                    content: "\f078";
+                    margin-left: 5px;
+                    float: right;
+                }
+            }
+        }
+        .cuisine{
+            border-top: 1px solid $light-blue;
+        }
+        .region__list,
+        .cuisine__list{
+            padding: 10px 30px 20px 30px;
+            .city,
+            .food{
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                h1{
+                    margin-left: 5px;
+                    font-family: $text-font;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    color: $light-blue;
+                    font-size: 1.4rem;
+                }
+                input{
+                    font-size: 1.4rem;
+                }
+            }
+            button{
+                margin: 20px 0px;
+                padding: 10px 20px 10px 20px;
+                background: transparent;
+                color: $light-blue;
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+                border-radius: 20px;
+                border: 1px solid $light-blue;
+            }
+        }
+    }
+    .restaurant__container{
+        grid-row: 1;
+        grid-column: 2;
+        overflow-y: scroll;
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .button__container{
+                button{
+                    padding: 10px 20px 10px 20px;
+                    background: transparent;
+                    color: $light-blue;
+                    border: 1px solid $light-blue;
+                    border-radius: 20px;
+                    margin-right: 10px;
+                }
+            }
+            h1{
+                font-family: $header-font;
+                color: $white;
+                letter-spacing: 1px;
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+        .restaurant__list{
+            margin-top: 20px;
+        }
+    }
+}

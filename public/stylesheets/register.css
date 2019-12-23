@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+/* Global variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.main__container {
+  height: calc(100vh - 80px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 40px;
+  background: #171B26;
+}
+
+.main__container .image {
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1/4;
+  background: url("/images/dinner.svg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.main__container .register__container {
+  grid-column: 2;
+  grid-row: 1/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main__container .register__container .register__form {
+  max-width: 720px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.main__container .register__container .register__form h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Montserrat", sans-serif;
+  color: #A3B4D3;
+}
+
+.main__container .register__container .register__form input {
+  height: 50px;
+  width: 100%;
+  padding-left: 5px;
+  margin-top: 20px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.main__container .register__container .register__form button {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.4rem;
+  background-color: #A3B4D3;
+  border-radius: 10px;
+  border: none;
+}
+
+.main__container .register__container .register__form .got__account,
+.main__container .register__container .register__form .terms {
+  width: 100%;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  font-family: "Nunito", sans-serif;
+  color: #A3B4D3;
+  text-align: right;
+}
+
+.main__container .register__container .register__form .got__account a,
+.main__container .register__container .register__form .terms a {
+  margin-left: 2.5px;
+  text-decoration: none;
+  color: #A3B4D3;
+}
+
+.main__container .register__container .register__form .got__account a:hover,
+.main__container .register__container .register__form .terms a:hover {
+  cursor: pointer;
+}
+
+.main__container .register__container .register__form .terms {
+  text-align: center;
+}
+
+.main__container .register__container .register__form .terms a {
+  text-decoration: underline;
+}

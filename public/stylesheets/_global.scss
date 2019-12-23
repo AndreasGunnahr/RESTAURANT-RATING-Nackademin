@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+/* Global variables */ 
+$header-font: 'Montserrat', sans-serif;
+$text-font: 'Nunito', sans-serif;
+$dark-dark-blue: #171B26;
+$dark-blue: #272F46;
+$blue: #486096;
+$light-blue: #A3B4D3;
+$red: #B1422F;
+$white: white;
+$yellow: #f1c40f;
+// 8A8F92 grey
+$grey: rgb(207,195,207);
+$black: black;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}

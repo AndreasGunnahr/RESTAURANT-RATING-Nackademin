@@ -1,0 +1,163 @@
+@import '_global';
+
+// Navbar - start
+nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background: $dark-blue;
+    color: $light-blue;
+    border-bottom: 1px solid $light-blue;
+    .dropdown{
+        display: flex;
+        align-items: center;
+        h1{
+            padding: 10px;
+        }
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            height: 60px;
+            width: 80px;
+            background: transparent;
+        }
+    }
+    ul{
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        list-style: none;
+        a{
+            font-family: $header-font;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            padding: 10px;
+            text-decoration: none;
+            color: $light-blue;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+// Navbar - end
+
+// Restaurant Cards - start
+.card__container{
+    height: 225px;
+    width: 100%;
+    display: flex;
+    background: $dark-blue;
+    margin-top: 20px;
+    img{
+        height: 100%;
+        width: 350px;
+    }
+    .info__container{
+        width: 100%;
+        padding: 40px 30px 40px 30px;
+        h1{
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            font-family: $header-font;
+            color: $white;
+        }
+    }
+    .top{
+        display: flex;
+        align-items: center;
+        .star__container{
+            margin-left: 20px;
+            direction: ltr;
+            a{
+                font-size: 1.5rem;
+                transition: 0.3s all;
+                color: $light-blue;
+                // &:hover{
+                //     color: #f1c40f;
+                //     cursor: pointer;
+                // }
+            }
+            .s1{
+                color: $yellow;
+            }
+            .s2{
+                color: $yellow;
+            }
+            .s3{
+                color: $yellow;
+            }
+            .s4{
+                color: $yellow;
+            }
+            // .b1:hover ~ a{
+            //     color: #f1c40f;
+            // }
+            // .b2:hover ~ a{
+            //     color: #f1c40f;
+            // }
+            // .b3:hover ~ a{
+            //     color: #f1c40f;
+            // }
+            // .b4:hover ~ a{
+            //     color: #f1c40f;
+            // }
+            // .b5:hover ~ a{
+            //     color: #f1c40f;
+            // }
+        }
+        .average{
+            margin-left: 5px;
+            font-size: 1.2rem;
+        }
+        .comments{
+            margin-left: 20px;
+            font-size: 1.2rem;
+            font-family: $header-font;
+            color: $light-blue;
+            i{
+                font-size: 1.6rem;
+                margin-right: 5px;
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .middle{
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        button{
+            margin-right: 5px;
+            padding: 7.5px;
+            background: transparent;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: $light-blue;
+            border: 1px solid $light-blue;
+        }
+        h1{
+            margin-left: 20px;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            font-family: $text-font;
+            color: $light-blue;
+        }
+    }
+    .bottom{
+        margin-top: 25px;
+        button{
+            background: $blue;
+            border: 1px solid $blue;
+            padding: 10px;
+            color: $white;
+        }
+    }
+}
+// Restaurant Cards - end

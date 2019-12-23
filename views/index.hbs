@@ -1,0 +1,68 @@
+{{!-- <h1>{{title}}</h1>
+<p>Welcome to {{title}}</p> --}}
+
+{{>navbar}}
+<div class="header__container">
+    <a><i class="fas fa-user-friends"></i>2 people</a>
+    <a><i class="fas fa-calendar-alt"></i>Date</a>
+    <a><i class="far fa-clock"></i>Time</a>
+    <a><i class="fas fa-search"></i>Location</a>
+    <button>Search</button>
+</div>
+<div class = "main__container">
+    <div class = "sidebar">
+       <div class = "region">
+           <a><i class="fas fa-map-marker-alt"></i>Region</a>
+       </div>
+       <div class = "region__list">
+           <div class = "city">
+               <input type = "checkbox">
+                <h1>Västmanland</h1>
+           </div>
+           <div class = "city">
+               <input type = "checkbox">
+                <h1>Norrland</h1>
+           </div>
+            <div class = "city">
+               <input type = "checkbox">
+                <h1>Stockholm</h1>
+           </div>
+            <div class = "city">
+               <input type = "checkbox">
+               <h1>Skåne</h1>
+           </div>
+           <button>Show more</button>
+        </div>
+         <div class = "cuisine">
+           <a><i class="fas fa-utensils"></i>Cuisine</a>
+       </div>
+       <div class = "cuisine__list">
+            <div class = "food">
+               <input type = "checkbox">
+                <h1>Thailand</h1>
+           </div>
+            <div class = "food">
+               <input type = "checkbox">
+                <h1>China</h1>
+           </div>
+            <div class = "food">
+               <input type = "checkbox">
+                <h1>American</h1>
+           </div>
+            <button>Show more</button>
+        </div>
+    </div>
+    <div class = "restaurant__container">
+        <div class = "header">
+            <h1><i class="fas fa-utensils"></i>Restaurant Found: 42</h1>
+            <div class="button__container">
+                <button>Sort by price</button>
+                <button>List</button>
+                <button>Map</button>
+            </div>
+        </div>
+        <div class="restaurant__list">
+            {{>cards}}
+        </div>
+    </div>
+</div>

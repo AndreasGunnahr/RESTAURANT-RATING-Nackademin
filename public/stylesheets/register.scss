@@ -1,0 +1,85 @@
+@import '_global';
+
+.main__container{
+    height: calc(100vh - 80px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3,1fr);
+    padding: 40px;
+    background: $dark-dark-blue;  
+    .image{
+        height: 100%;
+        grid-column: 1;
+        grid-row: 1/4;
+        background: url('/images/dinner.svg') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    .register__container{
+        grid-column: 2;
+        grid-row: 1/4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .register__form{
+            max-width: 720px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            // background: $dark-blue;
+            padding: 30px;
+            h1{
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-family: $header-font;
+                color: $light-blue;
+            }
+            input{
+                height: 50px;
+                width: 100%;
+                padding-left: 5px;
+                margin-top: 20px;
+                font-family: $text-font;
+                font-size: 1.2rem;
+                border-radius: 10px;
+                border: none;
+            }
+            button{
+                height: 50px;
+                width: 100%;
+                margin-top: 20px;
+                font-family: $text-font;
+                font-size: 1.4rem;
+                background-color: $light-blue;
+                border-radius: 10px;
+                border: none;
+            }
+            .got__account,
+            .terms{
+                width: 100%;
+                font-size: 1.2rem;
+                margin-top: 5px;
+                font-family: $text-font;
+                color: $light-blue;
+                text-align: right;
+                a{
+                    margin-left: 2.5px;
+                    text-decoration: none;
+                    color: $light-blue;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+            .terms{
+                text-align: center;
+                a{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{{>navbar}}
+<div class="main__container">
+    <div class= "image"></div>
+    <div class="login__container">
+        <form class = "login__form" method = "POST" action = "/login">
+            <h1>Sign into your account </h1>
+            <input type = "text" name = "username" placeholder = "Enter your username">
+            <input type = "password" name = "password" placeholder = "Enter your password">
+            <p class = "forgot__password">Forgot password? <a>Click here</a></p>
+            {{#if messages.error}}
+                <h1 class = "error">{{messages.error}}</h1>
+            {{/if}}
+            <button type = "submit">Login</button>
+            <p class = "create__account">Don't have an account? <a href = "/register">Sign up</a></p>
+        </form> 
+    </div>
+</div>
