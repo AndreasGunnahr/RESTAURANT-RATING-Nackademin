@@ -13,8 +13,8 @@ var passport = require('passport');
 var bcrypt = require('bcrypt');
 var flash = require('express-flash');
 var session = require('express-session');
-var port = 3000;
-var db = require('./db/index');
+var port = process.env.PORT || 3000;
+// var db = require('./db/index');
 
 var app = express();
 
@@ -64,18 +64,18 @@ initializePassport(
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/login');
-var registerRouter = require('./routes/register');
-var profileRouter = require('./routes/profile')
-var postsRouter = require('./routes/posts')
+// var usersRouter = require('./routes/users');
+// var loginRouter = require('./routes/login');
+// var registerRouter = require('./routes/register');
+// var profileRouter = require('./routes/profile')
+// var postsRouter = require('./routes/posts')
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/login', loginRouter);
-app.use('/register', registerRouter);
-app.use('/profile', profileRouter)
-app.use('/post', postsRouter)
+// app.use('/users', usersRouter);
+// app.use('/login', loginRouter);
+// app.use('/register', registerRouter);
+// app.use('/profile', profileRouter)
+// app.use('/post', postsRouter)
 
 app.delete('/logout', function(req,res){
   req.logOut();
