@@ -1,48 +1,12 @@
 @import '_global';
 
-.header__container{
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $dark-blue;
-    a{  
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: $text-font;
-        font-size: 1.3rem;
-        padding: 20px 30px 20px 30px;
-        color: $light-blue;
-        i{
-            padding-right: 5px;
-        }
-        &::after{
-            font-family: "FontAwesome"; 
-            font-weight: 500; 
-            content: "\f078";
-            margin-left: 5px;
-    
-        }
-    }
-    button{
-        padding: 10px 20px 10px 20px;
-        background: $red;
-        color: $white;
-        font-size: 1.3rem;
-        letter-spacing: 1px;
-        border-radius: 20px;
-        border:none;
-    }
-}
-
 .main__container{
     display: grid;
     grid-template-rows: 1;
     grid-template-columns: 320px 1fr;
     background: $dark-dark-blue;
     padding: 5%;
-    .sidebar{ 
+    .sidemenu{ 
         grid-row: 1;
         grid-column: 1;
         background: $white;

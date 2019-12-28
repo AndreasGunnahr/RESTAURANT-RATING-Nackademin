@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+/* Global variables */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.main__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main__container .main__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: calc(100vh - 80px);
+  width: 100%;
+  padding: 5%;
+}
+
+.main__container .main__content .create__container {
+  width: 100%;
+}
+
+.main__container .main__content .create__container h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.main__container .main__content .create__container form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main__container .main__content .create__container form label {
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+}
+
+.main__container .main__content .create__container form input {
+  width: 100%;
+  max-width: 540px;
+  height: 40px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding-left: 5px;
+  border: 2px solid #A3B4D3;
+}
+
+.main__container .main__content .create__container form .tag__container,
+.main__container .main__content .create__container form .category__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__container .main__content .create__container form .tag__container input,
+.main__container .main__content .create__container form .category__container input {
+  max-width: 460px;
+}
+
+.main__container .main__content .create__container form .tag__container button,
+.main__container .main__content .create__container form .category__container button {
+  height: 40px;
+  width: 80px;
+  border-radius: 5px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  border: none;
+  background: #A3B4D3;
+  margin: 5px 0px 0px 2px;
+}
+
+.main__container .main__content .create__container form textarea {
+  width: 100%;
+  max-width: 540px;
+  height: 160px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px;
+  border: 2px solid #A3B4D3;
+}
+/*# sourceMappingURL=profile.css.map */

@@ -4,89 +4,56 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
   font-size: 10px;
 }
 
-.header__container {
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #272F46;
-}
-
-.header__container a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Nunito", sans-serif;
-  font-size: 1.3rem;
-  padding: 20px 30px 20px 30px;
-  color: #A3B4D3;
-}
-
-.header__container a i {
-  padding-right: 5px;
-}
-
-.header__container a::after {
-  font-family: "FontAwesome";
-  font-weight: 500;
-  content: "\f078";
-  margin-left: 5px;
-}
-
-.header__container button {
-  padding: 10px 20px 10px 20px;
-  background: #B1422F;
-  color: white;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  border-radius: 20px;
-  border: none;
-}
-
 .main__container {
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 1;
-  grid-template-columns: 320px 1fr;
+  -ms-grid-rows: 1;
+      grid-template-rows: 1;
+  -ms-grid-columns: 320px 1fr;
+      grid-template-columns: 320px 1fr;
   background: #171B26;
   padding: 5%;
 }
 
-.main__container .sidebar {
+.main__container .sidemenu {
+  -ms-grid-row: 1;
   grid-row: 1;
+  -ms-grid-column: 1;
   grid-column: 1;
   background: white;
   margin-right: 20px;
   background: #272F46;
 }
 
-.main__container .sidebar .cuisine,
-.main__container .sidebar .region {
+.main__container .sidemenu .cuisine,
+.main__container .sidemenu .region {
   padding: 20px 30px 20px 30px;
   border-bottom: 1px solid #A3B4D3;
 }
 
-.main__container .sidebar .cuisine a,
-.main__container .sidebar .region a {
+.main__container .sidemenu .cuisine a,
+.main__container .sidemenu .region a {
   font-size: 1.8rem;
   font-family: "Montserrat", sans-serif;
   color: #A3B4D3;
   letter-spacing: 1px;
 }
 
-.main__container .sidebar .cuisine a i,
-.main__container .sidebar .region a i {
+.main__container .sidemenu .cuisine a i,
+.main__container .sidemenu .region a i {
   margin-right: 10px;
 }
 
-.main__container .sidebar .cuisine a::after,
-.main__container .sidebar .region a::after {
+.main__container .sidemenu .cuisine a::after,
+.main__container .sidemenu .region a::after {
   font-family: "FontAwesome";
   font-weight: 500;
   content: "\f078";
@@ -94,28 +61,32 @@ html {
   float: right;
 }
 
-.main__container .sidebar .cuisine {
+.main__container .sidemenu .cuisine {
   border-top: 1px solid #A3B4D3;
 }
 
-.main__container .sidebar .region__list,
-.main__container .sidebar .cuisine__list {
+.main__container .sidemenu .region__list,
+.main__container .sidemenu .cuisine__list {
   padding: 10px 30px 20px 30px;
 }
 
-.main__container .sidebar .region__list .city,
-.main__container .sidebar .region__list .food,
-.main__container .sidebar .cuisine__list .city,
-.main__container .sidebar .cuisine__list .food {
+.main__container .sidemenu .region__list .city,
+.main__container .sidemenu .region__list .food,
+.main__container .sidemenu .cuisine__list .city,
+.main__container .sidemenu .cuisine__list .food {
   margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.main__container .sidebar .region__list .city h1,
-.main__container .sidebar .region__list .food h1,
-.main__container .sidebar .cuisine__list .city h1,
-.main__container .sidebar .cuisine__list .food h1 {
+.main__container .sidemenu .region__list .city h1,
+.main__container .sidemenu .region__list .food h1,
+.main__container .sidemenu .cuisine__list .city h1,
+.main__container .sidemenu .cuisine__list .food h1 {
   margin-left: 5px;
   font-family: "Nunito", sans-serif;
   font-weight: 500;
@@ -124,15 +95,15 @@ html {
   font-size: 1.4rem;
 }
 
-.main__container .sidebar .region__list .city input,
-.main__container .sidebar .region__list .food input,
-.main__container .sidebar .cuisine__list .city input,
-.main__container .sidebar .cuisine__list .food input {
+.main__container .sidemenu .region__list .city input,
+.main__container .sidemenu .region__list .food input,
+.main__container .sidemenu .cuisine__list .city input,
+.main__container .sidemenu .cuisine__list .food input {
   font-size: 1.4rem;
 }
 
-.main__container .sidebar .region__list button,
-.main__container .sidebar .cuisine__list button {
+.main__container .sidemenu .region__list button,
+.main__container .sidemenu .cuisine__list button {
   margin: 20px 0px;
   padding: 10px 20px 10px 20px;
   background: transparent;
@@ -144,15 +115,23 @@ html {
 }
 
 .main__container .restaurant__container {
+  -ms-grid-row: 1;
   grid-row: 1;
+  -ms-grid-column: 2;
   grid-column: 2;
   overflow-y: scroll;
 }
 
 .main__container .restaurant__container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main__container .restaurant__container .header .button__container button {
@@ -177,3 +156,4 @@ html {
 .main__container .restaurant__container .restaurant__list {
   margin-top: 20px;
 }
+/*# sourceMappingURL=home.css.map */

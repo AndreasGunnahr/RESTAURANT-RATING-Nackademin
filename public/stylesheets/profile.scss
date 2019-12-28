@@ -1,0 +1,70 @@
+@import '_global';
+
+.main__container{
+    display: flex;
+    .main__content{
+        display: flex;
+        align-items: center;
+        height: calc(100vh - 80px);
+        width: 100%;
+        padding: 5%;
+        .create__container{
+            width: 100%;
+            h1{
+                font-family: $header-font;
+                font-size: 3rem;
+                text-transform: uppercase;
+            }
+            form{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                label{
+                    margin-top: 20px;
+                    font-family: $header-font;
+                    font-size: 1.4rem;
+                }
+                input{
+                    width: 100%;
+                    max-width: 540px;
+                    height: 40px;
+                    font-family: $text-font;
+                    font-size: 1.2rem;
+                    border-radius: 5px;
+                    margin-top: 5px;
+                    padding-left: 5px;
+                    border: 2px solid $light-blue;
+                }
+                .tag__container,
+                .category__container{
+                    display: flex;
+                    align-items: center;
+                    input{
+                        max-width: 460px;
+                    }
+                    button{
+                        height: 40px;
+                        width: 80px;
+                        border-radius: 5px;
+                        font-family: $text-font;
+                        font-size: 1.2rem;
+                        border: none;
+                        background: $light-blue;
+                        margin: 5px 0px 0px 2px;
+                    }
+                }
+                textarea{
+                    width: 100%;
+                    max-width: 540px;
+                    height: 160px;
+                    font-family: $text-font;
+                    font-size: 1.2rem;
+                    border-radius: 5px;
+                    margin-top: 5px;
+                    padding: 10px;
+                    border: 2px solid $light-blue;
+                }
+            }
+        }
+    }
+}

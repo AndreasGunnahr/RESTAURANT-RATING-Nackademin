@@ -4,26 +4,39 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
   font-size: 10px;
 }
 
+.active {
+  color: red;
+}
+
 nav {
   width: 100%;
   height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background: #272F46;
   color: #A3B4D3;
   border-bottom: 1px solid #A3B4D3;
 }
 
 nav .dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav .dropdown h1 {
@@ -31,23 +44,36 @@ nav .dropdown h1 {
 }
 
 nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav .logo img {
   height: 60px;
-  width: 80px;
+  width: 60px;
   background: transparent;
 }
 
 nav ul {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   list-style: none;
+  padding: 20px;
 }
 
 nav ul a {
@@ -63,9 +89,108 @@ nav ul a:hover {
   cursor: pointer;
 }
 
+nav ul button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  padding: 10px;
+  text-decoration: none;
+  color: #A3B4D3;
+  background: transparent;
+  border: none;
+}
+
+nav ul button:hover {
+  cursor: pointer;
+}
+
+nav ul .img__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 10px;
+}
+
+nav ul .img__container img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+nav ul .img__container span {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+nav ul .img__container span::first-letter {
+  text-transform: uppercase;
+}
+
+nav ul .img__container:hover {
+  cursor: pointer;
+}
+
+.sidebar {
+  height: calc(100vh - 80px);
+  width: 280px;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar a {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  padding: 10px 20% 10px 20%;
+  letter-spacing: .5px;
+}
+
+.sidebar a i {
+  font-size: 2rem;
+  margin-right: 20px;
+}
+
+.sidebar a:hover {
+  cursor: pointer;
+  background: grey;
+}
+
 .card__container {
   height: 225px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background: #272F46;
   margin-top: 20px;
@@ -78,7 +203,8 @@ nav ul a:hover {
 
 .card__container .info__container {
   width: 100%;
-  padding: 40px 30px 40px 30px;
+  padding: 5%;
+  margin: auto auto;
 }
 
 .card__container .info__container h1 {
@@ -89,8 +215,12 @@ nav ul a:hover {
 }
 
 .card__container .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card__container .top .star__container {
@@ -100,6 +230,7 @@ nav ul a:hover {
 
 .card__container .top .star__container a {
   font-size: 1.5rem;
+  -webkit-transition: 0.3s all;
   transition: 0.3s all;
   color: #A3B4D3;
 }
@@ -143,8 +274,12 @@ nav ul a:hover {
 
 .card__container .middle {
   margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card__container .middle button {
@@ -164,14 +299,4 @@ nav ul a:hover {
   font-family: "Nunito", sans-serif;
   color: #A3B4D3;
 }
-
-.card__container .bottom {
-  margin-top: 25px;
-}
-
-.card__container .bottom button {
-  background: #486096;
-  border: 1px solid #486096;
-  padding: 10px;
-  color: white;
-}
+/*# sourceMappingURL=partials.css.map */

@@ -1,11 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var checkAuthenticated = require('../middleware/checkAuthenticated');
+var checkNotAuthenticated = require('../middleware/checkNotAuthenticated')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
+  var user = await req.user;
   res.render('index', { 
     title: 'Express',
-    style: 'home.css'
+    style: 'home.css',
+    isAuthenticated: user
  });
 });
 

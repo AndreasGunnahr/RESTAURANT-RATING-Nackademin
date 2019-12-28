@@ -1,5 +1,4 @@
 var mysql = require('mysql');
-var bcrypt = require('bcrypt');
 
 var pool  = mysql.createPool({
   connectionLimit: 10,
@@ -34,20 +33,18 @@ restaurantDB.one = (table, column, name) => {
             if(err){
                 return reject(err);
             }
-            console.log(results)
             return resolve(results[0]);
         });
     });
 };
 
 restaurantDB.insert = async (table, object) => {
-    object.password = await bcrypt.hash(object.password,10);
     return new Promise((resolve, reject) => {
         pool.query(`INSERT INTO ${table} SET ?`, object , (err, results) => {
             if(err){
                 return reject(err);
             }
-            return resolve(results[0]);
+            return resolve(results.insertId);
         });
     });
 };

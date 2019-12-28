@@ -1,19 +1,22 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../db/index');
-// const data = await db.all('Users');
+var passport = require('passport');
+var checkAuthenticated = require('../middleware/checkAuthenticated');
+var checkNotAuthenticated = require('../middleware/checkNotAuthenticated')
 
 /* GET register page. */
-router.get('/', function(req, res, next) {
+router.get('/', checkNotAuthenticated, function(req, res, next) {
   res.render('register', { 
     style: 'register.css'
   })
 })
 
 /* POST register page */ 
-router.post('/', async function(req,res,next) {
-  const insert = await db.insert('Users', req.body);
-  res.redirect('/')
-})
+router.post('/', passport.authenticate('register', {
+  successRedirect: '/',
+  failureRedirect: '/register',
+  failureFlash: true
+}));
+
 
 module.exports = router;

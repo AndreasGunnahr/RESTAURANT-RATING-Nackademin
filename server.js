@@ -1,6 +1,7 @@
 if(process.env.NODE_ENV != 'production'){
   require('dotenv').config()
 } 
+var methodOverride = require('method-override')
 var createError = require('http-errors');
 var express = require('express');
 var exphbs  = require('express-handlebars');
@@ -43,6 +44,7 @@ app.use(session({
 
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(methodOverride('_method'))
 
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
@@ -52,27 +54,38 @@ app.use(sassMiddleware({
 }));
 
 
-const initializePassport = require('./passport-config')
+const initializePassport = require('./middleware/passport-config')
 initializePassport(
   passport,
-  username => db.one('Users', username, username),
-  id => db.one('Users', id, id)
+  username => db.one('Users', `username`, username),
+  id => db.one('Users', `id`, id)
 )
+
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
+var profileRouter = require('./routes/profile')
+var postsRouter = require('./routes/posts')
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
+app.use('/profile', profileRouter)
+app.use('/post', postsRouter)
+
+app.delete('/logout', function(req,res){
+  req.logOut();
+  res.redirect('/login');
+})
+
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
-//   next(createError(404));
+//   next(createError(404));   
 // });
 
 // error handler
@@ -88,5 +101,3 @@ app.use('/register', registerRouter);
 
 
 app.listen(port, () => console.log(`App listening to port ${port}`));
-
-module.exports = app;
