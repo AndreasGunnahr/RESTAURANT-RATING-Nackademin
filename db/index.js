@@ -16,17 +16,34 @@ pool.getConnection(function(err, connection) {
 
 let restaurantDB = {};
 
-restaurantDB.all = (table) => {
+restaurantDB.all = (table, column, name) => {
+    return new Promise((resolve, reject) => {
+        pool.query(`SELECT * FROM ${table} WHERE ${column} = ?`, name, (err, results) => {
+            if(err){
+                return reject(err);
+            }
+            return resolve(JSON.parse(JSON.stringify(results)));
+        });
+    });
+};
+
+restaurantDB.allPosts = (table) => {
     return new Promise((resolve, reject) => {
         pool.query(`SELECT * FROM ${table}`, (err, results) => {
             if(err){
                 return reject(err);
             }
-            return resolve(results);
+            let result = JSON.parse(JSON.stringify(results));
+            result.forEach(post => {
+                post.tags = post.tags.trim().split(",");                
+            })
+
+            return resolve(result);
         });
     });
 };
 
+// SELECT posts.id, COUNT(*) As nrOfComments FROM restaurant.comments, restaurant.posts WHERE comments.post_id = posts.id GROUP BY posts.id;
 restaurantDB.one = (table, column, name) => {
     return new Promise((resolve, reject) => {
         pool.query(`SELECT * FROM ${table} WHERE ${column} = ?`, name, (err, results) => {
@@ -37,6 +54,19 @@ restaurantDB.one = (table, column, name) => {
         });
     });
 };
+
+
+restaurantDB.updateCountComment = (table, postID) => {
+    return new Promise((resolve, reject) => {
+        pool.query(`UPDATE ${table} SET nrOfComments = (
+            SELECT COUNT(*) FROM comments WHERE post_id = ${postID}) WHERE id = ${postID}`, (err, results) => {
+            if(err){
+                return reject(err);
+            }
+            return resolve(JSON.parse(JSON.stringify(results)));
+        });
+    });
+}
 
 restaurantDB.insert = async (table, object) => {
     return new Promise((resolve, reject) => {

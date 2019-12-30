@@ -13,6 +13,7 @@ html {
 }
 
 .main__container {
+  min-height: calc(100vh - 80px);
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1;
@@ -132,15 +133,6 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.main__container .restaurant__container .header .button__container button {
-  padding: 10px 20px 10px 20px;
-  background: transparent;
-  color: #A3B4D3;
-  border: 1px solid #A3B4D3;
-  border-radius: 20px;
-  margin-right: 10px;
 }
 
 .main__container .restaurant__container .header h1 {

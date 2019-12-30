@@ -6,6 +6,7 @@ commentBTN.addEventListener('click', () => {
     let comment = document.getElementById('comment-input').value;
     let username = document.getElementById('username').innerText;
     let date = new Date().toLocaleString();
+    let postID = location.href.substring(location.href.lastIndexOf('/') + 1);
     let commentDIV = document.createElement('DIV');
     commentDIV.classList.add('comment');
     let commentStructure = 
@@ -20,7 +21,16 @@ commentBTN.addEventListener('click', () => {
     document.getElementById('comment-input').value = "";
     commentCONTAINER.scrollTop = commentCONTAINER.scrollHeight;
     $.ajax({
-        // method: 'POST',
-        // url: ''
+        url: 'http://localhost:3000/api/comment',
+        type: 'POST',
+        dataType : 'json',
+        data: {
+            post_id: postID,
+            date: date,
+            comment: comment,
+            username: username
+        }
+    }).done(function(data){
+        console.log(data);
     });
 });

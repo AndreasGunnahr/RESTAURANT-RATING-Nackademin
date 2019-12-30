@@ -1,6 +1,7 @@
 @import '_global';
 
 .main__container{
+    min-height: calc(100vh - 80px);
     display: grid;
     grid-template-rows: 1;
     grid-template-columns: 320px 1fr;
@@ -76,16 +77,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .button__container{
-                button{
-                    padding: 10px 20px 10px 20px;
-                    background: transparent;
-                    color: $light-blue;
-                    border: 1px solid $light-blue;
-                    border-radius: 20px;
-                    margin-right: 10px;
-                }
-            }
             h1{
                 font-family: $header-font;
                 color: $white;

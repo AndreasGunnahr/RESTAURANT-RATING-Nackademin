@@ -3,6 +3,7 @@ if(process.env.NODE_ENV != 'production'){
 } 
 var methodOverride = require('method-override')
 var createError = require('http-errors');
+var bodyParser = require('body-parser');
 var express = require('express');
 var exphbs  = require('express-handlebars');
 var sassMiddleware = require('node-sass-middleware');
@@ -14,7 +15,9 @@ var bcrypt = require('bcrypt');
 var flash = require('express-flash');
 var session = require('express-session');
 var port = process.env.PORT || 3000;
-// var db = require('./db/index');
+var db = require('./db/index');
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
 var app = express();
 
@@ -32,6 +35,8 @@ app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -61,21 +66,20 @@ initializePassport(
   id => db.one('Users', `id`, id)
 )
 
-
-
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
-// var loginRouter = require('./routes/login');
-// var registerRouter = require('./routes/register');
-// var profileRouter = require('./routes/profile')
-// var postsRouter = require('./routes/posts')
+var apiRouter = require('./routes/api');
+var loginRouter = require('./routes/login');
+var registerRouter = require('./routes/register');
+var profileRouter = require('./routes/profile')
+var postsRouter = require('./routes/posts')
+
 
 app.use('/', indexRouter);
-// app.use('/users', usersRouter);
-// app.use('/login', loginRouter);
-// app.use('/register', registerRouter);
-// app.use('/profile', profileRouter)
-// app.use('/post', postsRouter)
+app.use('/api', apiRouter);
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
+app.use('/profile', profileRouter);
+app.use('/post', postsRouter);
 
 app.delete('/logout', function(req,res){
   req.logOut();

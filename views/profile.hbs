@@ -3,33 +3,39 @@
     {{>sidebar}}
     <div class="main__content">
         <div class = "create__container">
-            <h1>Create a post</h1>
-            <form>
+            <div class="header__container">
+                <h1>Create a post</h1>
+                <button id = "post__btn">Create post</button>
+            </div>
+            <form id = "post__text-form" method = "POST" action = "/api/post">
                 <label for = "title">Title</label>
                 <input name = "title">
                 <label for = "tags">Tags</label>
                 <div class="tag__container">
                     <input name = "tags">
-                    <button>Add tag</button>
                 </div>
-                <label for = "category">Category</label>
-                <div class="category__container">
-                    <input name = "category">
-                    <button>Add category</button>
+                <label for = "city">City</label>
+                <div class="city__container">
+                    <input name = "city">
+                </div>
+                <label for = "cuisine">Cuisine</label>
+                <div class="cuisine__container">
+                    <input name = "cuisine">
                 </div>
                 <label for = "description">Description</label>
                 <textarea name = "description"></textarea>
+                <input id = "imgSRC" name = "img" style = "display: none">
+            </form>
+            <form id = "post__img-form" class="box" method="post" action="/api/upload" enctype="multipart/form-data">
+                <div class="box__input">
+                    <h1>Image for the post</h1>
+                    <div class="file__container">
+                        <label id = "browse" for = "file">Browse file</label>
+                        <span id = "selected__file"> No file selected </span>
+                        <input id="file" class="box__file" type="file" name="files[]" />
+                    </div>
+                </div>
             </form>
         </div>
-        <form class="box" method="post" action="" enctype="multipart/form-data">
-            <div class="box__input">
-                <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
-                <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-                <button class="box__button" type="submit">Upload</button>
-            </div>
-            <div class="box__uploading">Uploading&hellip;</div>
-            <div class="box__success">Done!</div>
-            <div class="box__error">Error! <span></span>.</div>
-        </form>
     </div>
 </div>

@@ -10,7 +10,7 @@
     background: $dark-dark-blue;
     img{
         width: 100%;
-        max-width: 700px;
+        max-width: 800px;
         // Sätt en max width / height.
     }
     h1{
@@ -24,14 +24,15 @@
         }
     }
     span{
-        display: block;
+        width: 100%;
+        max-width: 1000px;
         font-family: $text-font;
         color: $light-blue;
         font-size: 1.4rem;
         text-overflow: ellipsis;
         word-wrap: break-word;
-        padding: 0% 10%;
         margin-top: 10px;
+        padding: 0 30px;
     }
     .tag__container{
         display: flex;
@@ -75,25 +76,29 @@
     }
     .comment__container{
         width: 100%;
+        max-width: 1000px;
         display: flex;
         flex-direction: column;
-        border: 1px solid $light-blue;
+        align-items: center;
         margin-top: 30px;
         padding: 30px 30px 50px 30px;
-        h1{
+        .h1__header{
+            width: 100%;
             margin: 0;
         }
         .showComment__container{
-            height: 400px;
+            height: 100%;
+            max-height: 350px;
             width: 100%;
             background: $white;
             margin-top: 10px;
             padding: 10px;
             overflow-y: scroll;
+            border-radius: 5px;
             .comment{
+                margin-top: 5px;
                 .header{
-                    display: flex;
-                    // align-items: center !important;
+                    display: flex;;
                     img{
                         height: 30px;
                         width: 30px;
@@ -103,7 +108,7 @@
                         display: flex;
                         align-items: center;
                         height: 30px;
-                        margin-left: 10px;
+                        margin: 0 0 0 10px;
                         font-family: $header-font;
                         font-size: 1.6rem;
                         color: black;
@@ -122,28 +127,57 @@
                     font-family: $text-font;
                     font-size: 1.4rem;
                     padding: 5px 5px 15px 5px; 
+                    &::first-letter{
+                        text-transform: uppercase;
+                    }
                 }
             }
         }
         .post__container{
+            width: 100%;
             display: flex;
+            align-items: center;
             margin-top: 20px;
             input{
                 font-family: $text-font;
-                font-size: 1.2rem;
+                font-size: 1.3rem;
                 width: 100%;
-                padding-left: 5px;
+                height: 50px;
+                padding-left: 10px;
                 border: none;   
                 border-radius: 5px;
             }
             button{
-                width: 120px;
-                height: 40px;
-                font-family: $text-font;
+                width: 140px;
+                height: 50px;
+                background: $light-blue;
+                color: $white;
+                font-family: $header-font;
+                text-transform: uppercase;
                 font-size: 1.2rem;
                 margin-left: 5px;
                 border: none;
                 border-radius: 5px;
+                cursor: pointer;
+            } 
+            a{
+                width: 100%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $header-font;
+                color: $white;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                font-size: 2rem;
+                border: none;
+                border-radius: 5px;
+                background: $light-blue;
+                text-decoration: none;
+                &:hover{
+                    cursor: pointer;
+                }
             }
         }
     }

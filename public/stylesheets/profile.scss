@@ -5,29 +5,50 @@
     .main__content{
         display: flex;
         align-items: center;
+        justify-content: center;
         height: calc(100vh - 80px);
         width: 100%;
         padding: 5%;
         .create__container{
             width: 100%;
-            h1{
-                font-family: $header-font;
-                font-size: 3rem;
-                text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .header__container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h1{
+                    font-family: $header-font;
+                    font-size: 3rem;
+                    text-transform: uppercase;
+                }
+                button{
+                    height: 50px;
+                    width: 160px;
+                    border-radius: 5px;
+                    font-family: $header-font;
+                    text-transform: uppercase;
+                    font-size: 1.3em;
+                    letter-spacing: .5px;
+                    border: none;
+                    background: $dark-blue;
+                    color: $white;
+                    margin: 5px 0px 0px 2px;
+                    cursor: pointer;
+                }
             }
             form{
-                width: 100%;
                 display: flex;
                 flex-direction: column;
                 label{
                     margin-top: 20px;
                     font-family: $header-font;
-                    font-size: 1.4rem;
+                    font-size: 1.6rem;
                 }
                 input{
                     width: 100%;
-                    max-width: 540px;
-                    height: 40px;
+                    height: 45px;
                     font-family: $text-font;
                     font-size: 1.2rem;
                     border-radius: 5px;
@@ -36,27 +57,29 @@
                     border: 2px solid $light-blue;
                 }
                 .tag__container,
-                .category__container{
+                .city__container,
+                .cuisine__container{
                     display: flex;
                     align-items: center;
-                    input{
-                        max-width: 460px;
-                    }
                     button{
-                        height: 40px;
-                        width: 80px;
+                        height: 45px;
+                        width: 160px;
                         border-radius: 5px;
-                        font-family: $text-font;
-                        font-size: 1.2rem;
+                        font-family: $header-font;
+                        text-transform: uppercase;
+                        font-size: 1.3em;
+                        letter-spacing: .5px;
                         border: none;
                         background: $light-blue;
+                        color: $white;
                         margin: 5px 0px 0px 2px;
+                        cursor: pointer;
+                        text-align: center;
                     }
                 }
                 textarea{
                     width: 100%;
-                    max-width: 540px;
-                    height: 160px;
+                    height: 150px;
                     font-family: $text-font;
                     font-size: 1.2rem;
                     border-radius: 5px;
@@ -64,6 +87,49 @@
                     padding: 10px;
                     border: 2px solid $light-blue;
                 }
+            }
+        }
+        .box{
+            width: 100%;    
+            margin-top: 20px;
+            .box__input{
+                display: flex;
+                flex-direction: column;
+                h1{
+                    font-family: $header-font;
+                    font-size: 1.6rem;
+                    text-transform: none;
+                }
+                .file__container{
+                    display: flex;
+                    align-items: center;
+                    .box__file{
+                        display: none;
+                    }
+                    #browse{
+                        padding: 15px;
+                        width: 160px;
+                        text-align: center;
+                        background: $light-blue;
+                        font-family: $header-font;
+                        color: $white;
+                        text-transform: uppercase;
+                        letter-spacing: .5px;
+                        font-size: 1.4rem;
+                        border-radius: 5px;
+                        margin: 10px 0 0 0;
+                        cursor: pointer;    
+                    }
+                    span{
+                        font-family: $header-font;
+                        font-size: 1.4rem;
+                        color: $blue;
+                        margin: 10px 0 0 10px;
+                        &::first-letter{
+                            text-transform: uppercase;
+                        }
+                    }
+                } 
             }
         }
     }

@@ -1,5 +1,4 @@
 {{>navbar}}
-
 <div class="main__post">
     <img src = "/images/restaurant.jpg">
     <h1 class="title">Guest House Maxim Restaurant</h1>
@@ -19,12 +18,26 @@
     <h1 class="description">Description</h1>
     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maxime quos, explicabo laudantium voluptatibus facilis quia. Quisquam atque esse blanditiis sint voluptate, ducimus aperiam reiciendis harum dolor tempora sit corrupti.</span>
     <div class="comment__container">
-        <h1>Comments</h1>
+        <h1 class = "h1__header">Comments</h1>
         <div class = "showComment__container">
+            {{#each comments}}
+                <div class = "comment">
+                    <div class = "header">
+                        <img src = "/images/profile.jpg">
+                        <h1>{{this.username}}</h1>
+                        <span>{{this.date}}</span>
+                    </div>
+                    <p>{{this.comment}}</p>
+                </div>
+            {{/each}}
         </div>
         <div class="post__container">
-            <input id = "comment-input" placeholder = "Type here to post your comment">
-            <button id = "comment-btn">Post comment</button>
+            {{#if isAuthenticated}}
+                <input id = "comment-input" placeholder = "Type here to post your comment">
+                <button id = "comment-btn">Post comment</button>
+            {{else}}
+                <a href = "/login" type = "button">Sign in to post comment</a>
+            {{/if}}
         </div>
     </div>
 </div>

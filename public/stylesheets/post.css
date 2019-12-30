@@ -30,7 +30,7 @@ html {
 
 .main__post img {
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .main__post h1 {
@@ -46,14 +46,15 @@ html {
 }
 
 .main__post span {
-  display: block;
+  width: 100%;
+  max-width: 1000px;
   font-family: "Nunito", sans-serif;
   color: #A3B4D3;
   font-size: 1.4rem;
   text-overflow: ellipsis;
   word-wrap: break-word;
-  padding: 0% 10%;
   margin-top: 10px;
+  padding: 0 30px;
 }
 
 .main__post .tag__container {
@@ -116,6 +117,7 @@ html {
 
 .main__post .comment__container {
   width: 100%;
+  max-width: 1000px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,22 +125,31 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid #A3B4D3;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 30px;
   padding: 30px 30px 50px 30px;
 }
 
-.main__post .comment__container h1 {
+.main__post .comment__container .h1__header {
+  width: 100%;
   margin: 0;
 }
 
 .main__post .comment__container .showComment__container {
-  height: 400px;
+  height: 100%;
+  max-height: 350px;
   width: 100%;
   background: white;
   margin-top: 10px;
   padding: 10px;
   overflow-y: scroll;
+  border-radius: 5px;
+}
+
+.main__post .comment__container .showComment__container .comment {
+  margin-top: 5px;
 }
 
 .main__post .comment__container .showComment__container .comment .header {
@@ -161,7 +172,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   height: 30px;
-  margin-left: 10px;
+  margin: 0 0 0 10px;
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   color: black;
@@ -187,29 +198,69 @@ html {
   padding: 5px 5px 15px 5px;
 }
 
+.main__post .comment__container .showComment__container .comment p::first-letter {
+  text-transform: uppercase;
+}
+
 .main__post .comment__container .post__container {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 20px;
 }
 
 .main__post .comment__container .post__container input {
   font-family: "Nunito", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   width: 100%;
-  padding-left: 5px;
+  height: 50px;
+  padding-left: 10px;
   border: none;
   border-radius: 5px;
 }
 
 .main__post .comment__container .post__container button {
-  width: 120px;
-  height: 40px;
-  font-family: "Nunito", sans-serif;
+  width: 140px;
+  height: 50px;
+  background: #A3B4D3;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
   font-size: 1.2rem;
   margin-left: 5px;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.main__post .comment__container .post__container a {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  font-size: 2rem;
+  border: none;
+  border-radius: 5px;
+  background: #A3B4D3;
+  text-decoration: none;
+}
+
+.main__post .comment__container .post__container a:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=post.css.map */

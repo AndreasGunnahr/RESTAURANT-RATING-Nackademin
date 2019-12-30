@@ -32,8 +32,6 @@ function initialize(passport, getUserByUsername, getUserById){
         return done(null, false, {message: 'Username taken'})
         // Add if error handling
     }
-
-    // const authenticateNewPost 
     
     passport.use('login',new LocalStrategy({usernameField: 'username'}, authenticateUser))
     passport.use('register',new LocalStrategy({usernameField: 'username', passReqToCallback: true}, authenticateNewUser))
