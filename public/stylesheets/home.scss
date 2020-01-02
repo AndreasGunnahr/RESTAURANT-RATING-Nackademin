@@ -3,11 +3,13 @@
 .main__container{
     min-height: calc(100vh - 80px);
     display: grid;
-    grid-template-rows: 1;
+    grid-template-rows: 1fr;
     grid-template-columns: 320px 1fr;
     background: $dark-dark-blue;
-    padding: 5%;
+    overflow-y: hidden;
+    padding: 30px;
     .sidemenu{ 
+        height: calc(100vh - 130px);
         grid-row: 1;
         grid-column: 1;
         background: $white;
@@ -70,13 +72,14 @@
         }
     }
     .restaurant__container{
+        height: calc(100vh - 150px);
         grid-row: 1;
         grid-column: 2;
-        overflow-y: scroll;
         .header{
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
             h1{
                 font-family: $header-font;
                 color: $white;
@@ -87,7 +90,10 @@
             }
         }
         .restaurant__list{
-            margin-top: 20px;
+            height: 100%;
+            overflow-y: scroll;
+            // margin-top: 20px;
+            margin-bottom: 10px;
         }
     }
 }

@@ -1,11 +1,11 @@
 {{>navbar}}
 <div class="main__post">
-    <img src = "/images/restaurant.jpg">
-    <h1 class="title">Guest House Maxim Restaurant</h1>
+    <img src = "/uploads/{{clickedPost.img}}">
+    <h1 class="title">{{clickedPost.title}}</h1>
     <div class="tag__container">
-        <span class="tag">Restaurant</span>
-        <span class="tag">Food</span>
-        <span class="tag">America</span>
+        {{#each clickedPost.tags}}
+            <span class="tag">{{this}}</span>
+        {{/each}}
     </div>
      <div class="star__container">
         <a class="fas fa-star s1"></a>
@@ -16,7 +16,7 @@
         <h1>62% recommended</h1>
     </div>
     <h1 class="description">Description</h1>
-    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maxime quos, explicabo laudantium voluptatibus facilis quia. Quisquam atque esse blanditiis sint voluptate, ducimus aperiam reiciendis harum dolor tempora sit corrupti.</span>
+    <span>{{clickedPost.description}}</span>
     <div class="comment__container">
         <h1 class = "h1__header">Comments</h1>
         <div class = "showComment__container">

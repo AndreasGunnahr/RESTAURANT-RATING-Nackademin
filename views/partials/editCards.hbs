@@ -1,0 +1,38 @@
+{{#each allPosts}}
+    <div class = "editCard">
+        <img src = "/uploads/{{this.img}}">
+        <div class = "info__container">
+            <div class = "top">
+                <h1>{{this.title}}</h1>
+                <div class="star__container">
+                    <a class="fas fa-star s1"></a>
+                    <a class="fas fa-star s2"></a>
+                    <a class="fas fa-star s3"></a>
+                    <a class="fas fa-star s4"></a>
+                    <a class="fas fa-star s5"></a>
+                </div>
+                <h1 class = "average">4.2</h1>
+            </div>
+            <div class="middle">
+                {{#each this.tags}}
+                <a class = "tag">{{this}}</a>
+                {{/each}}        
+                <h1>62% recommended</h1> 
+            </div>
+            <div class="bottom">
+                <div class="city-text">
+                    <h1>City</h1>
+                    <div class="city">{{this.city}}</div>
+                </div>
+                <div class = "cuisine-text">
+                    <h1>Cuisine</h1>
+                    <div class="cuisine">{{this.cuisine}}</div>
+                </div>
+            </div>
+        </div>
+        <div class = "edit__container">
+            <a name = {{this.id}} class = "editBtn"><i class="fas fa-pen" aria-disabled="true"></i> Edit</a>
+            <a name = {{this.id}} class = "deleteBtn"><i class="fas fa-times" aria-disabled="true"></i> Delete</a>
+        </div>
+    </div>
+{{/each}}

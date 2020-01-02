@@ -10,7 +10,7 @@
     background: $dark-dark-blue;
     img{
         width: 100%;
-        max-width: 800px;
+        max-width: 450px;
         // Sätt en max width / height.
     }
     h1{
@@ -89,6 +89,7 @@
         .showComment__container{
             height: 100%;
             max-height: 350px;
+            min-height: 200px;
             width: 100%;
             background: $white;
             margin-top: 10px;

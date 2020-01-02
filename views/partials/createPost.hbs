@@ -1,0 +1,37 @@
+  <div class="main__content">
+        <div class = "create__container">
+            <div class="header__container">
+                <h1>Create a post</h1>
+                <button id = "post__btn">Create post</button>
+            </div>
+            <form id = "post__text-form" method = "POST" action = "/post/new">
+                <label for = "title">Title</label>
+                <input name = "title">
+                <label for = "tags">Tags</label>
+                <div class="tag__container">
+                    <input name = "tags">
+                </div>
+                <label for = "city">City</label>
+                <div class="city__container">
+                    <input name = "city">
+                </div>
+                <label for = "cuisine">Cuisine</label>
+                <div class="cuisine__container">
+                    <input name = "cuisine">
+                </div>
+                <label for = "description">Description</label>
+                <textarea name = "description"></textarea>
+                <input id = "imgSRC" name = "img" style = "display: none">
+            </form>
+            <form id = "post__img-form" class="box" method="POST" action="/uploads/img" enctype="multipart/form-data">
+                <div class="box__input">
+                    <h1>Image for the post</h1>
+                    <div class="file__container">
+                        <label id = "browse" for = "file">Browse file</label>
+                        <span id = "selected__file"> No file selected </span>
+                        <input id="file" class="box__file" type="file" name = "postImg" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>   

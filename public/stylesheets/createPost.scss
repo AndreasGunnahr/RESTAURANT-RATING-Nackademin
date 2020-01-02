@@ -1,14 +1,13 @@
 @import '_global';
 
 .main__container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    background: $dark-dark-blue;
     .main__content{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        grid-column: 2;
         height: calc(100vh - 80px);
-        width: 100%;
-        padding: 5%;
+        padding: 3%;
         .create__container{
             width: 100%;
             display: flex;
@@ -20,11 +19,13 @@
                 align-items: center;
                 h1{
                     font-family: $header-font;
-                    font-size: 3rem;
+                    font-size: 2.5rem;
                     text-transform: uppercase;
+                    color: $white;
+                    letter-spacing: 1px;
                 }
                 button{
-                    height: 50px;
+                    height: 45px;
                     width: 160px;
                     border-radius: 5px;
                     font-family: $header-font;
@@ -45,16 +46,18 @@
                     margin-top: 20px;
                     font-family: $header-font;
                     font-size: 1.6rem;
+                    color: $white;
+                    letter-spacing: 1px;
                 }
                 input{
                     width: 100%;
-                    height: 45px;
+                    height: 40px;
                     font-family: $text-font;
                     font-size: 1.2rem;
                     border-radius: 5px;
                     margin-top: 5px;
-                    padding-left: 5px;
-                    border: 2px solid $light-blue;
+                    padding-left: 10px;
+                    border: none;
                 }
                 .tag__container,
                 .city__container,
@@ -62,7 +65,7 @@
                     display: flex;
                     align-items: center;
                     button{
-                        height: 45px;
+                        height: 40px;
                         width: 160px;
                         border-radius: 5px;
                         font-family: $header-font;
@@ -85,7 +88,7 @@
                     border-radius: 5px;
                     margin-top: 5px;
                     padding: 10px;
-                    border: 2px solid $light-blue;
+                    border: none;
                 }
             }
         }
@@ -99,6 +102,8 @@
                     font-family: $header-font;
                     font-size: 1.6rem;
                     text-transform: none;
+                    color: $white;
+                    letter-spacing: 1px;
                 }
                 .file__container{
                     display: flex;
@@ -107,10 +112,10 @@
                         display: none;
                     }
                     #browse{
-                        padding: 15px;
+                        padding: 12.5px;
                         width: 160px;
                         text-align: center;
-                        background: $light-blue;
+                        background: $dark-blue;
                         font-family: $header-font;
                         color: $white;
                         text-transform: uppercase;
@@ -123,7 +128,8 @@
                     span{
                         font-family: $header-font;
                         font-size: 1.4rem;
-                        color: $blue;
+                        color: $white;
+                        letter-spacing: 1px;
                         margin: 10px 0 0 10px;
                         &::first-letter{
                             text-transform: uppercase;

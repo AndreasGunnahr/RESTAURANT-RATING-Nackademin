@@ -1,0 +1,29 @@
+@import '_global';
+.main__container{
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    background: $dark-dark-blue;
+    .main__content{
+        height: calc(100vh - 80px);
+        grid-column: 2;
+        padding: 3%;
+        overflow: hidden;
+        .edit__container{
+            height: 100%;
+            .header__container{
+                h1{
+                    font-family: $header-font;
+                    color: $white;
+                    font-size: 2.5rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    margin-bottom: 20px;
+                }
+            }
+            .editCard__container{
+                height: 100%;
+                overflow-y: scroll;
+            }
+        }
+    }
+}

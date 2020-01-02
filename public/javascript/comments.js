@@ -21,7 +21,7 @@ commentBTN.addEventListener('click', () => {
     document.getElementById('comment-input').value = "";
     commentCONTAINER.scrollTop = commentCONTAINER.scrollHeight;
     $.ajax({
-        url: 'http://localhost:3000/api/comment',
+        url: 'http://localhost:3000/post/comment',
         type: 'POST',
         dataType : 'json',
         data: {

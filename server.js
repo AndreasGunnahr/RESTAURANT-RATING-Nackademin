@@ -67,19 +67,19 @@ initializePassport(
 )
 
 var indexRouter = require('./routes/index');
-var apiRouter = require('./routes/api');
+var uploadsRouter = require('./routes/uploads');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
 var profileRouter = require('./routes/profile')
-var postsRouter = require('./routes/posts')
+var postRouter = require('./routes/post')
 
 
 app.use('/', indexRouter);
-app.use('/api', apiRouter);
+app.use('/uploads', uploadsRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/profile', profileRouter);
-app.use('/post', postsRouter);
+app.use('/post', postRouter);
 
 app.delete('/logout', function(req,res){
   req.logOut();

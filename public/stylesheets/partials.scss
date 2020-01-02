@@ -3,6 +3,17 @@
 .active{
     color: red; 
 }
+// Overlay - start
+.overlay{
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1;
+}
+// Overlay - end
+
 
 // Navbar - start
 nav{
@@ -109,6 +120,7 @@ nav{
         margin-top: 30px;
         padding: 10px 15% 10px 15%;
         letter-spacing: .5px;
+        text-decoration: none;
         i{
             font-size: 2rem;
             margin-right: 20px;
@@ -123,15 +135,16 @@ nav{
 // Sidebar - end
 
 // Restaurant Cards - start
-.card__container{
+.card__container,
+.editCard{
     height: 225px;
     width: 100%;
     display: flex;
     background: $dark-blue;
-    margin-top: 20px;
+    margin-bottom: 20px;
     img{
         height: 100%;
-        width: 350px;
+        min-width: 350px;
     }
     .info__container{
         width: 100%;
@@ -264,5 +277,213 @@ nav{
             }
         }
     }
+    .edit__container{
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-right: 10px;
+        a{
+            width: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-family: $header-font;
+            color: $white;
+            text-transform: uppercase;
+            padding: 10px;
+            border: 2px solid $white;
+            cursor: pointer;
+            letter-spacing: 1px;
+            &:nth-child(2){
+                margin-top: 20px;
+            }
+            i{
+                font-size: 1.5rem;
+                margin-right: 5px;
+            }
+        }
+    }
+    .editCard{
+        height: 200px;
+    }
+    
 }
 // Restaurant Cards - end
+
+// Delete post container - start
+.delete__container{
+    display: none;
+    position: absolute;
+    height: 225px;
+    width: 300px;
+    background: $dark-dark-blue;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    z-index: 1;
+    padding: 20px;
+    h1{
+        font-family: $header-font;
+        font-size: 1.8rem;
+        color: $white;
+        span{
+            font-family: $text-font;
+            color: red;
+            font-size: 1.5rem;
+        }
+    }
+    .deleteBtn__container{
+        display: flex;
+        justify-content: center;
+        button{
+            font-family: $header-font;
+            font-size: 1.4rem;
+            padding: 10px;
+            width: 120px;
+            margin: 20px 5px 0 0;
+            border-radius: 5px;
+            background: $dark-blue;
+            color: $white;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+        }
+    }
+}
+// Delete post container - end
+
+// Edit post container - start
+.editPost__container{
+    display: none;
+    position: absolute;
+    height: 750px;
+    width: 80%;
+    background: $dark-dark-blue;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    z-index: 1;
+    padding: 5%;
+    flex-direction: column;
+    justify-content: center;
+    a{
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 4rem;
+        color: $white;
+        margin: 20px;
+        cursor: pointer;
+    }
+    .header__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            font-family: $header-font;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: $white;
+            letter-spacing: 1px;
+        }
+        button{
+            height: 45px;
+            width: 160px;
+            border-radius: 5px;
+            font-family: $header-font;
+            text-transform: uppercase;
+            font-size: 1.3em;
+            letter-spacing: .5px;
+            border: none;
+            background: $dark-blue;
+            color: $white;
+            margin: 5px 0px 0px 2px;
+            cursor: pointer;
+        }
+    }
+    .edit__form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        label{
+            width: 100%;
+            margin-top: 20px;
+            font-family: $header-font;
+            font-size: 1.6rem;
+            color: $white;
+            letter-spacing: 1px;
+        }
+        input{
+            width: 100%;
+            height: 40px;
+            font-family: $text-font;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-top: 5px;
+            padding-left: 10px;
+            border: none;
+        }
+        textarea{
+            width: 100%;
+            height: 150px;
+            font-family: $text-font;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-top: 5px;
+            padding: 10px;
+            border: none;
+        }
+    }
+    .box{
+        width: 100%;    
+        margin-top: 20px;
+        .box__input{
+            display: flex;
+            flex-direction: column;
+            h1{
+                font-family: $header-font;
+                font-size: 1.6rem;
+                text-transform: none;
+                color: $white;
+                letter-spacing: 1px;
+            }
+            .file__container{
+                display: flex;
+                align-items: center;
+                .box__file{
+                    display: none;
+                }
+                #browse{
+                    padding: 12.5px;
+                    width: 160px;
+                    text-align: center;
+                    background: $dark-blue;
+                    font-family: $header-font;
+                    color: $white;
+                    text-transform: uppercase;
+                    letter-spacing: .5px;
+                    font-size: 1.4rem;
+                    border-radius: 5px;
+                    margin: 10px 0 0 0;
+                    cursor: pointer;    
+                }
+                span{
+                    font-family: $header-font;
+                    font-size: 1.4rem;
+                    color: $white;
+                    letter-spacing: 1px;
+                    margin: 10px 0 0 10px;
+                    &::first-letter{
+                        text-transform: uppercase;
+                    }
+                }
+            } 
+        }
+    }
+}

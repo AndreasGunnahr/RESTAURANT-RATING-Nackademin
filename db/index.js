@@ -50,11 +50,23 @@ restaurantDB.one = (table, column, name) => {
             if(err){
                 return reject(err);
             }
+            // let result = JSON.parse(JSON.stringify(results[0]));
+            // result.tags = result.tags.trim().split(",");                
             return resolve(results[0]);
         });
     });
 };
 
+restaurantDB.deletePost = (table, postID) => {
+    return new Promise((resolve, reject) => {
+        pool.query(`DELETE FROM ${table} WHERE id = ${postID}`, (err, results) => {
+            if(err){
+                return reject(err);
+            }
+            return resolve("Number of records deleted: " + results.affectedRows);
+        });
+    });
+}
 
 restaurantDB.updateCountComment = (table, postID) => {
     return new Promise((resolve, reject) => {

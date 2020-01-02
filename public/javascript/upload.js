@@ -19,5 +19,6 @@ postBtn.addEventListener('click', () => {
         let nameIMG = selectedImg.innerText.split(" ")[0];
         imgSRC.value = nameIMG.toLowerCase();
         postTextForm.submit();
+        postImgForm.submit();
     }
 });
