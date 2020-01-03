@@ -22,7 +22,11 @@ restaurantDB.all = (table, column, name) => {
             if(err){
                 return reject(err);
             }
-            return resolve(JSON.parse(JSON.stringify(results)));
+            let result = JSON.parse(JSON.stringify(results));
+            result.forEach(comment => {
+                comment.stars = comment.stars.split("");                
+            })
+            return resolve(result);
         });
     });
 };
@@ -43,15 +47,13 @@ restaurantDB.allPosts = (table) => {
     });
 };
 
-// SELECT posts.id, COUNT(*) As nrOfComments FROM restaurant.comments, restaurant.posts WHERE comments.post_id = posts.id GROUP BY posts.id;
 restaurantDB.one = (table, column, name) => {
     return new Promise((resolve, reject) => {
         pool.query(`SELECT * FROM ${table} WHERE ${column} = ?`, name, (err, results) => {
             if(err){
                 return reject(err);
-            }
-            // let result = JSON.parse(JSON.stringify(results[0]));
-            // result.tags = result.tags.trim().split(",");                
+            }  
+
             return resolve(results[0]);
         });
     });
@@ -68,10 +70,22 @@ restaurantDB.deletePost = (table, postID) => {
     });
 }
 
+restaurantDB.updatePost = (table, postID, object) => {
+    return new Promise((resolve, reject) => {
+        pool.query(`UPDATE ${table} SET title = ?, tags = ?, city = ?, cuisine = ?, description = ?, img = ?
+        WHERE id = ${postID}`,[object.title, object.tags, object.city, object.cuisine, object.description, object.img],(err, results) => {
+            if(err){
+                return reject(err);
+            }
+            return resolve('Number of records changed: ' + results.affectedRows)
+        });
+    });
+}
+
 restaurantDB.updateCountComment = (table, postID) => {
     return new Promise((resolve, reject) => {
         pool.query(`UPDATE ${table} SET nrOfComments = (
-            SELECT COUNT(*) FROM comments WHERE post_id = ${postID}) WHERE id = ${postID}`, (err, results) => {
+            SELECT COUNT(*) FROM comments WHERE (post_id = ${postID} AND comment <> "")) WHERE id = ${postID}`, (err, results) => {
             if(err){
                 return reject(err);
             }
@@ -90,6 +104,23 @@ restaurantDB.insert = async (table, object) => {
         });
     });
 };
+
+
+restaurantDB.updateRating = (table,userID, postID) => {
+    return new Promise((resolve, reject) => {
+        pool.query(`UPDATE ${table} SET 
+            nrOfRatings = (SELECT COUNT(*) FROM ratings WHERE post_id = ${postID}),
+            scoreRating = ((SELECT SUM(score) FROM ratings WHERE post_id = ${postID}) / (nrOfRatings))
+            WHERE id = ${postID}`, (err, results) => {
+            if(err){
+                return reject(err);
+            }
+            return resolve(JSON.parse(JSON.stringify(results)));
+        });
+    });
+}
+
+
 
 
 

@@ -11,6 +11,10 @@ html {
   font-size: 10px;
 }
 
+body {
+  position: relative;
+}
+
 .main__post {
   height: 100%;
   display: flex;
@@ -22,7 +26,9 @@ html {
 
 .main__post img {
   width: 100%;
-  max-width: 450px;
+  max-width: 750px;
+  max-height: 550px;
+  border-radius: 5px;
 }
 
 .main__post h1 {
@@ -37,11 +43,17 @@ html {
   text-transform: uppercase;
 }
 
+.main__post .description {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 30px;
+}
+
 .main__post span {
   width: 100%;
   max-width: 1000px;
   font-family: "Nunito", sans-serif;
-  color: #A3B4D3;
+  color: white;
   font-size: 1.4rem;
   text-overflow: ellipsis;
   word-wrap: break-word;
@@ -105,7 +117,7 @@ html {
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
-  padding: 30px 30px 50px 30px;
+  padding: 0 30px 50px 30px;
 }
 
 .main__post .comment__container .h1__header {
@@ -151,12 +163,33 @@ html {
 
 .main__post .comment__container .showComment__container .comment .header span {
   display: flex;
+  width: 150px;
   align-items: center;
   height: 30px;
   font-family: "Nunito", sans-serif;
+  color: #A3B4D3;
   font-size: 1.1rem;
   padding: 0;
   margin: 1px 0 0 5px;
+}
+
+.main__post .comment__container .showComment__container .comment .header .commentStars__container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  direction: rtl;
+  margin-bottom: 1px;
+}
+
+.main__post .comment__container .showComment__container .comment .header .commentStars__container a {
+  font-size: 1.25rem;
+  color: #f1c40f;
+  margin-left: 2.5px;
+}
+
+.main__post .comment__container .showComment__container .comment .header .commentStars__container a:last-child {
+  margin-left: 0;
 }
 
 .main__post .comment__container .showComment__container .comment p {
@@ -171,12 +204,77 @@ html {
 
 .main__post .comment__container .post__container {
   width: 100%;
-  display: flex;
-  align-items: center;
   margin-top: 20px;
 }
 
-.main__post .comment__container .post__container input {
+.main__post .comment__container .post__container h1 {
+  margin: 0;
+}
+
+.main__post .comment__container .post__container .rate__container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main__post .comment__container .post__container .rate__container p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  margin-left: 10px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.main__post .comment__container .post__container .rate__container .stars__container {
+  display: flex;
+  justify-content: flex-end;
+  direction: rtl;
+}
+
+.main__post .comment__container .post__container .rate__container .stars__container a {
+  font-size: 2rem;
+  transition: 0.3s all;
+  color: #A3B4D3;
+  margin-left: 5px;
+}
+
+.main__post .comment__container .post__container .rate__container .stars__container a:last-child {
+  margin-left: 0;
+}
+
+.main__post .comment__container .post__container .rate__container .stars__container a:hover {
+  cursor: pointer;
+  color: #f1c40f;
+}
+
+.main__post .comment__container .post__container .rate__container .stars__container .s1:hover ~ a {
+  color: #f1c40f;
+}
+
+.main__post .comment__container .post__container .rate__container .stars__container .s2:hover ~ a {
+  color: #f1c40f;
+}
+
+.main__post .comment__container .post__container .rate__container .stars__container .s3:hover ~ a {
+  color: #f1c40f;
+}
+
+.main__post .comment__container .post__container .rate__container .stars__container .s4:hover ~ a {
+  color: #f1c40f;
+}
+
+.main__post .comment__container .post__container .rate__container .stars__container .s5:hover ~ a {
+  color: #f1c40f;
+}
+
+.main__post .comment__container .post__container .comment__section {
+  display: flex;
+  align-items: center;
+}
+
+.main__post .comment__container .post__container .comment__section input {
   font-family: "Nunito", sans-serif;
   font-size: 1.3rem;
   width: 100%;
@@ -186,10 +284,10 @@ html {
   border-radius: 5px;
 }
 
-.main__post .comment__container .post__container button {
+.main__post .comment__container .post__container .comment__section button {
   width: 140px;
   height: 50px;
-  background: #A3B4D3;
+  background: #272F46;
   color: white;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -200,7 +298,7 @@ html {
   cursor: pointer;
 }
 
-.main__post .comment__container .post__container a {
+.main__post .comment__container .post__container .signPost {
   width: 100%;
   height: 60px;
   display: flex;
@@ -213,10 +311,10 @@ html {
   font-size: 2rem;
   border: none;
   border-radius: 5px;
-  background: #A3B4D3;
+  background: #272F46;
   text-decoration: none;
 }
 
-.main__post .comment__container .post__container a:hover {
+.main__post .comment__container .post__container .signPost:hover {
   cursor: pointer;
 }

@@ -11,7 +11,11 @@
                 <a class="fas fa-star s4"></a>
                 <a class="fas fa-star s5"></a>
             </div>
-            <h1 class = "average">4.2</h1>
+            {{#if this.scoreRating}}
+                <h1 class = "average">{{this.scoreRating}}</h1>
+            {{else}}
+                <h1 class = "average">0</h1>
+            {{/if}}
             {{#if this.nrOfComments}}
             <a class = "comments"><i class="fas fa-comments"></i>{{this.nrOfComments}}</a>
             {{else}}
@@ -20,9 +24,13 @@
         </div>
         <div class="middle">
             {{#each this.tags}}
-            <a class = "tag">{{this}}</a>
-            {{/each}}        
-            <h1>62% recommended</h1> 
+                <a class = "tag">{{this}}</a>
+            {{/each}}
+            {{#if this.nrOfRatings}}        
+                <h1>{{this.nrOfRatings}} Ratings</h1> 
+            {{else}}    
+                <h1>0 Ratings</h1> 
+            {{/if}}
         </div>
         <div class="bottom">
             <div class="city-text">
@@ -37,4 +45,4 @@
     </div>
 </div>
 {{/each}}
-
+<script src = "/javascript/cards.js"></script>

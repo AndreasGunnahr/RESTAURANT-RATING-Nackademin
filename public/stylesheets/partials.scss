@@ -150,7 +150,7 @@ nav{
         width: 100%;
         padding: 5%;
         h1{
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             letter-spacing: 1px;
             font-family: $header-font;
             color: $white;
@@ -166,38 +166,7 @@ nav{
                 font-size: 1.5rem;
                 transition: 0.3s all;
                 color: $light-blue;
-                // &:hover{
-                //     color: #f1c40f;
-                //     cursor: pointer;
-                // }
             }
-            .s1{
-                color: $yellow;
-            }
-            .s2{
-                color: $yellow;
-            }
-            .s3{
-                color: $yellow;
-            }
-            .s4{
-                color: $yellow;
-            }
-            // .b1:hover ~ a{
-            //     color: #f1c40f;
-            // }
-            // .b2:hover ~ a{
-            //     color: #f1c40f;
-            // }
-            // .b3:hover ~ a{
-            //     color: #f1c40f;
-            // }
-            // .b4:hover ~ a{
-            //     color: #f1c40f;
-            // }
-            // .b5:hover ~ a{
-            //     color: #f1c40f;
-            // }
         }
         .average{
             margin-left: 5px;
@@ -236,9 +205,9 @@ nav{
         }
         h1{
             margin-left: 20px;
-            font-size: 1.2em;
+            font-size: 1.6rem;
             letter-spacing: 1px;
-            font-family: $text-font;
+            font-family: $header-font;
             color: $light-blue;
         }
     }
@@ -354,6 +323,9 @@ nav{
         }
     }
 }
+.card__container{
+    cursor: pointer;
+}
 // Delete post container - end
 
 // Edit post container - start
@@ -406,7 +378,7 @@ nav{
             cursor: pointer;
         }
     }
-    .edit__form{
+    #edit__form{
         display: flex;
         flex-direction: column;
         align-items: center;

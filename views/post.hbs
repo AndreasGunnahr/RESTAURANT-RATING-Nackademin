@@ -26,6 +26,11 @@
                         <img src = "/images/profile.jpg">
                         <h1>{{this.username}}</h1>
                         <span>{{this.date}}</span>
+                        <div class="commentStars__container">
+                            {{#each this.stars}}
+                                <a class="fas fa-star"></a>
+                            {{/each}}
+                        </div>
                     </div>
                     <p>{{this.comment}}</p>
                 </div>
@@ -33,11 +38,26 @@
         </div>
         <div class="post__container">
             {{#if isAuthenticated}}
-                <input id = "comment-input" placeholder = "Type here to post your comment">
-                <button id = "comment-btn">Post comment</button>
+                {{!-- <h1>Rate restaurant</h1> --}}
+                <div class="rate__container">
+                    <div class="stars__container">
+                        <a name = "0" class="fas fa-star s1 star"></a>
+                        <a name = "1" class="fas fa-star s2 star"></a>
+                        <a name = "2" class="fas fa-star s3 star"></a>
+                        <a name = "3" class = "fas fa-star s4 star"></a>
+                        <a name = "4" class="fas fa-star s5 star"></a>
+                    </div>
+                    <p>Select a rating to write a review</p>
+                </div>
+                <div class = "comment__section">
+                    <input id = "comment-input" placeholder = "Type here to post your comment">
+                    <button id = "comment-btn">Post comment</button>
+                </div>
             {{else}}
-                <a href = "/login" type = "button">Sign in to post comment</a>
+                <a class = "signPost" href = "/login" type = "button">Sign in to write a review</a>
             {{/if}}
         </div>
     </div>
 </div>
+<script src = "/javascript/rating.js"></script>
+<script src = "/javascript/comments.js"></script>

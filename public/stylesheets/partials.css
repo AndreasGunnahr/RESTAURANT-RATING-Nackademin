@@ -180,7 +180,7 @@ nav ul .img__container:hover {
 
 .card__container .info__container h1,
 .editCard .info__container h1 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   letter-spacing: 1px;
   font-family: "Montserrat", sans-serif;
   color: white;
@@ -203,26 +203,6 @@ nav ul .img__container:hover {
   font-size: 1.5rem;
   transition: 0.3s all;
   color: #A3B4D3;
-}
-
-.card__container .top .star__container .s1,
-.editCard .top .star__container .s1 {
-  color: #f1c40f;
-}
-
-.card__container .top .star__container .s2,
-.editCard .top .star__container .s2 {
-  color: #f1c40f;
-}
-
-.card__container .top .star__container .s3,
-.editCard .top .star__container .s3 {
-  color: #f1c40f;
-}
-
-.card__container .top .star__container .s4,
-.editCard .top .star__container .s4 {
-  color: #f1c40f;
 }
 
 .card__container .top .average,
@@ -277,9 +257,9 @@ nav ul .img__container:hover {
 .card__container .middle h1,
 .editCard .middle h1 {
   margin-left: 20px;
-  font-size: 1.2em;
+  font-size: 1.6rem;
   letter-spacing: 1px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #A3B4D3;
 }
 
@@ -419,6 +399,10 @@ nav ul .img__container:hover {
   border: none;
 }
 
+.card__container {
+  cursor: pointer;
+}
+
 .editPost__container {
   display: none;
   position: absolute;
@@ -474,14 +458,14 @@ nav ul .img__container:hover {
   cursor: pointer;
 }
 
-.editPost__container .edit__form {
+.editPost__container #edit__form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.editPost__container .edit__form label {
+.editPost__container #edit__form label {
   width: 100%;
   margin-top: 20px;
   font-family: "Montserrat", sans-serif;
@@ -490,7 +474,7 @@ nav ul .img__container:hover {
   letter-spacing: 1px;
 }
 
-.editPost__container .edit__form input {
+.editPost__container #edit__form input {
   width: 100%;
   height: 40px;
   font-family: "Nunito", sans-serif;
@@ -501,7 +485,7 @@ nav ul .img__container:hover {
   border: none;
 }
 
-.editPost__container .edit__form textarea {
+.editPost__container #edit__form textarea {
   width: 100%;
   height: 150px;
   font-family: "Nunito", sans-serif;

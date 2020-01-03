@@ -15,16 +15,25 @@ const storage = multer.diskStorage({
 
 var upload = multer({ 
     storage: storage, 
-}).single('postImg');
+}).fields([
+    { name: 'postImg', maxCount: 1 },
+    { name: 'editImg', maxCount: 1 }
+]);
 
 
 /* POST a a new image to the post into the upload folder inside Public */ 
 router.post('/img', (req, res) => {
    upload(req,res, (err) => {
+        console.log(req.files['postImg'])
+        console.log(req.files['editImg'])
         if(err){
             res.status(500).send(err);
         }else{
-            res.redirect('/')
+            if(req.files['postImg'] != undefined){
+                res.redirect('/');
+            }else{
+                res.redirect('/profile/edit');
+            }
         }
    });
 });

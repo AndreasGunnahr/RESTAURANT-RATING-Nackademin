@@ -24,11 +24,30 @@ router.post('/comment', async function(req, res, next){
     res.json({data: "DONE!"});
 });
 
-/* POST a new comment to the DB */ 
+router.post('/rating', async function(req,res,next){
+    const user = await req.user;
+    const data = {
+        post_id: req.body.post_id,
+        user_id: user.id,
+        score: req.body.score
+    }
+    const insertRating = await db.insert('ratings', data);
+    const updateRating = await db.updateRating('posts', user.id, req.body.post_id);
+    res.json({data: "DONE! 2"});
+})
+
+/* DELETE a specific post from the the DB */ 
 router.delete('/delete/:id', async function(req, res, next){
     const deletePost = await db.deletePost('posts', req.params.id);
     res.json({msg: deletePost})
 });
+
+/* UPDATE a specific post form the DB*/
+router.put('/update/:id', async function(req,res,next){
+    const updatePost = await db.updatePost('posts', req.params.id, req.body);
+    res.redirect('/profile/edit');
+});
+
 
 /* GET all info from a specific*/
 router.get('/info/:id', async function(req, res, next){

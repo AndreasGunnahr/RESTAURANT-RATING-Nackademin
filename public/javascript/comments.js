@@ -1,36 +1,64 @@
 const commentCONTAINER = document.querySelector('.showComment__container');
-const commentBTN = document.getElementById('comment-btn');
 
 
-commentBTN.addEventListener('click', () => {
-    let comment = document.getElementById('comment-input').value;
-    let username = document.getElementById('username').innerText;
-    let date = new Date().toLocaleString();
-    let postID = location.href.substring(location.href.lastIndexOf('/') + 1);
-    let commentDIV = document.createElement('DIV');
-    commentDIV.classList.add('comment');
-    let commentStructure = 
-    `<div class = "header">
-        <img src = "/images/profile.jpg">
-        <h1>${username}</h1>
-        <span>${date}</span>
-    </div>
-    <p>${comment}</p>`
-    commentDIV.innerHTML = commentStructure;
-    commentCONTAINER.append(commentDIV);
-    document.getElementById('comment-input').value = "";
-    commentCONTAINER.scrollTop = commentCONTAINER.scrollHeight;
-    $.ajax({
-        url: 'http://localhost:3000/post/comment',
-        type: 'POST',
-        dataType : 'json',
-        data: {
-            post_id: postID,
-            date: date,
-            comment: comment,
-            username: username
+
+if(commentBTN){
+    commentBTN.disabled = true;
+    commentBTN.addEventListener('click', () => {
+        let comment = document.getElementById('comment-input').value;
+        let username = document.getElementById('username').innerText;
+        let date = new Date().toLocaleString();
+        let postID = location.href.substring(location.href.lastIndexOf('/') + 1);
+        let commentDIV = document.createElement('DIV');
+        commentDIV.classList.add('comment');
+        let HTML = "";
+        let counter = "";
+        for(let x = ratingNumber; x <= 4; x++){
+            HTML += '<a class="fas fa-star"></a>'; 
+            counter += 'x';
         }
-    }).done(function(data){
-        console.log(data);
+        let commentStructure = 
+        `<div class = "header">
+            <img src = "/images/profile.jpg">
+            <h1>${username}</h1>
+            <span>${date}</span>
+            <div class="commentStars__container">
+               ${HTML}
+            </div>
+        </div>
+        <p>${comment}</p>`
+        commentDIV.innerHTML = commentStructure;
+        commentCONTAINER.append(commentDIV);
+        document.getElementById('comment-input').value = "";
+        commentCONTAINER.scrollTop = commentCONTAINER.scrollHeight;
+        $.ajax({
+            url: 'http://localhost:3000/post/comment',
+            type: 'POST',
+            dataType : 'json',
+            data: {
+                post_id: postID,
+                date: date,
+                comment: comment,
+                username: username,
+                stars: counter
+            }
+        }).done(function(data){
+            commentBTN.disabled = true;
+            stars.forEach(star => {
+                for(let x = 0; x <= 4; x++){
+                    star.style.color = "#A3B4D3";
+                }
+            });
+        });
+        $.ajax({
+            url: 'http://localhost:3000/post/rating',
+            type: 'POST',
+            data: {
+                score: counter.length,
+                post_id: postID
+            }
+        }).done(function(data){
+
+        }); 
     });
-});
+}

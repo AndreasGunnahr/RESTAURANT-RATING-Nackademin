@@ -10,7 +10,7 @@ var db = require('../db/index')
 router.get('/', async function(req, res, next) {
     var user = await req.user;
     res.render('profile', { 
-      style: 'profile.css',
+      style: 'profile.css',  //Finns ej
       isAuthenticated: user,
       partial: function() {
         return "dummy";
@@ -30,7 +30,7 @@ router.get('/create', async function(req, res, next){
 });
 
 router.get('/edit', async function(req, res, next){
-  var user = await req.user;
+  var user = req.user;
   var allPosts = await db.allPosts('posts');
   res.render('profile', { 
     style: 'editPost.css',

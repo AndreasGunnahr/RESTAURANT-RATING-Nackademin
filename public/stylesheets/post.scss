@@ -10,7 +10,9 @@
     background: $dark-dark-blue;
     img{
         width: 100%;
-        max-width: 450px;
+        max-width: 750px;
+        max-height: 550px;
+        border-radius: 5px;
         // Sätt en max width / height.
     }
     h1{
@@ -23,11 +25,16 @@
             text-transform: uppercase;
         }
     }
+    .description{
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 30px;
+    }
     span{
         width: 100%;
         max-width: 1000px;
         font-family: $text-font;
-        color: $light-blue;
+        color: $white;
         font-size: 1.4rem;
         text-overflow: ellipsis;
         word-wrap: break-word;
@@ -81,7 +88,7 @@
         flex-direction: column;
         align-items: center;
         margin-top: 30px;
-        padding: 30px 30px 50px 30px;
+        padding: 0 30px 50px 30px;
         .h1__header{
             width: 100%;
             margin: 0;
@@ -116,12 +123,30 @@
                     }
                     span{
                         display: flex;
+                        width: 150px;
                         align-items: center;
                         height: 30px;
                         font-family: $text-font;
+                        color: $light-blue;
                         font-size: 1.1rem;
                         padding: 0;
                         margin: 1px 0 0 5px;
+                    }
+                    .commentStars__container{
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        direction: rtl;
+                        margin-bottom: 1px;
+                        a{
+                            font-size: 1.25rem;
+                            color: $yellow;
+                            margin-left: 2.5px;
+                            &:last-child{
+                                margin-left: 0;
+                            }
+                        }
                     }
                 }
                 p{
@@ -136,32 +161,84 @@
         }
         .post__container{
             width: 100%;
-            display: flex;
-            align-items: center;
             margin-top: 20px;
-            input{
-                font-family: $text-font;
-                font-size: 1.3rem;
-                width: 100%;
-                height: 50px;
-                padding-left: 10px;
-                border: none;   
-                border-radius: 5px;
+            h1{
+               margin: 0;
             }
-            button{
-                width: 140px;
-                height: 50px;
-                background: $light-blue;
-                color: $white;
-                font-family: $header-font;
-                text-transform: uppercase;
-                font-size: 1.2rem;
-                margin-left: 5px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            } 
-            a{
+            .rate__container{
+                width: 100%;
+                max-width: 1000px;
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                p{
+                    font-family: $header-font;
+                    font-size: 1.4rem;
+                    margin-left: 10px;
+                    color: $white;
+                    letter-spacing: 1px;
+                }
+                .stars__container{
+                    display: flex;
+                    justify-content: flex-end;
+                    direction: rtl;
+                    a{
+                        font-size: 2rem;
+                        transition: 0.3s all;
+                        color: $light-blue;
+                        margin-left: 5px;
+                        &:last-child{
+                            margin-left: 0;
+                        }
+                        &:hover{
+                            cursor: pointer;
+                            color: $yellow;
+                        }
+                    }
+                    .s1:hover ~ a{
+                        color: $yellow;
+                    }
+                    .s2:hover ~ a{
+                        color: $yellow;
+                    }
+                    .s3:hover ~ a{
+                        color: $yellow;
+                    }
+                    .s4:hover ~ a{
+                        color: $yellow;
+                    }
+                    .s5:hover ~ a{
+                        color: $yellow;
+                    }
+                }
+            }
+            .comment__section{
+                display: flex;
+                align-items: center;
+                input{
+                    font-family: $text-font;
+                    font-size: 1.3rem;
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 10px;
+                    border: none;   
+                    border-radius: 5px;
+                }
+                button{
+                    width: 140px;
+                    height: 50px;
+                    background: $dark-blue;
+                    color: $white;
+                    font-family: $header-font;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    margin-left: 5px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                } 
+            }
+            .signPost{
                 width: 100%;
                 height: 60px;
                 display: flex;
@@ -174,7 +251,7 @@
                 font-size: 2rem;
                 border: none;
                 border-radius: 5px;
-                background: $light-blue;
+                background: $dark-blue;
                 text-decoration: none;
                 &:hover{
                     cursor: pointer;

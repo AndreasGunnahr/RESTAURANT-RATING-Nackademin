@@ -20,26 +20,28 @@
         <h1>Edit post</h1>
         <button id = "edit__btn">Save post</button>
     </div>
-    <form action="" class="edit__form">
+    <form id="edit__form" method="POST" action="">
         <label for = "edit__title">Title</label>
-        <input id = "edit__title">
+        <input id = "edit__title" name = "title">
         <label for = "edit__tags">Tags</label>
-        <input id = "edit__tags">
+        <input id = "edit__tags" name = "tags">
         <label for = "edit__city">City</label>
-        <input id = "edit__city">
-        <label for = "edit__cuisine">Cuisine</label = "edit__description">
-        <input id = "edit__cuisine">
+        <input id = "edit__city" name = "city">
+        <label for = "edit__cuisine">Cuisine</label>
+        <input id = "edit__cuisine" name = "cuisine">
         <label for = "edit__description">Description</label>
-        <textarea id = "edit__description"></textarea>
+        <textarea id = "edit__description" name = "description"></textarea>
+        <input id = "editImgSRC" name = "img" style = "display: none">
     </form>
-    <form id = "" class="box" method="POST" action="/uploads/img" enctype="multipart/form-data">
+    <form id = "edit__img-form" class="box" method="POST" action="/uploads/img" enctype="multipart/form-data">
         <div class="box__input">
             <h1>Image for the post</h1>
             <div class="file__container">
-                <label id = "browse" for = "file">Browse file</label>
-                <span id = "selected__file"> No file selected </span>
-                <input id="file" class="box__file" type="file" name = "postImg" />
+                <label id = "browse" for = "editFile">Browse file</label>
+                <span id = "selectedEdit__file"> No file selected </span>
+                <input id="editFile" class="box__file" type="file" name = "editImg" />
             </div>
         </div>
     </form>
 </div>
+<script src = "/javascript/profile.js"></script>
