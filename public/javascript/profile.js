@@ -39,7 +39,7 @@ editBtn.forEach(btn => {
         overlay.style.display = "block";
         editContainer.style.display = "flex";
         $.ajax({
-            url: 'http://localhost:3000/post/info/' + postID,
+            url: 'https://rate-your-restaurant.herokuapp.com/post/info/' + postID,
             type: 'GET'
         }).done(function(data){
             document.getElementById('edit__title').innerText = data.clickedPost.title;

@@ -32,7 +32,7 @@ if(commentBTN){
         document.getElementById('comment-input').value = "";
         commentCONTAINER.scrollTop = commentCONTAINER.scrollHeight;
         $.ajax({
-            url: 'http://localhost:3000/post/comment',
+            url: 'https://rate-your-restaurant.herokuapp.com/post/comment',
             type: 'POST',
             dataType : 'json',
             data: {
@@ -51,7 +51,7 @@ if(commentBTN){
             });
         });
         $.ajax({
-            url: 'http://localhost:3000/post/rating',
+            url: 'https://rate-your-restaurant.herokuapp.com/post/rating',
             type: 'POST',
             data: {
                 score: counter.length,
