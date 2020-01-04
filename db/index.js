@@ -38,7 +38,9 @@ restaurantDB.allPosts = (table) => {
                 return reject(err);
             }
             let result = JSON.parse(JSON.stringify(results));
+            console.log(result)
             result.forEach(post => {
+                console.log(post)
                 post.tags = post.tags.trim().split(",");               
             })
             return resolve(result);
