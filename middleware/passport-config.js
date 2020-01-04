@@ -24,7 +24,7 @@ function initialize(passport, getUserByUsername, getUserById){
         if(user == undefined){
             const user = req.body
             user.password = await bcrypt.hash(user.password,10);
-            const insertId = await db.insert(`Users`, user);
+            const insertId = await db.insert(`users`, user);
             user.id = insertId;
             return done(null, user);
         }
