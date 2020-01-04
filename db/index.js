@@ -34,13 +34,12 @@ restaurantDB.all = (table, column, name) => {
 restaurantDB.allPosts = (table) => {
     return new Promise((resolve, reject) => {
         pool.query(`SELECT * FROM ${table}`, (err, results) => {
+            // console.log(JSON.parse(JSON.stringify(results)));
             if(err){
                 return reject(err);
             }
             let result = JSON.parse(JSON.stringify(results));
-            console.log(result)
             result.forEach(post => {
-                console.log(post)
                 post.tags = post.tags.trim().split(",");               
             })
             return resolve(result);
@@ -54,10 +53,9 @@ restaurantDB.one = (table, column, name) => {
             if(err){
                 return reject(err);
             }  
-            if(results[0].tags){
+            if(table == "posts"){
                 results[0].tags = results[0].tags.trim().split(',');
             }
-
             return resolve(results[0]);
         });
     });

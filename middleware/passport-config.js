@@ -10,7 +10,6 @@ function initialize(passport, getUserByUsername, getUserById){
         }
         try{
             if(await bcrypt.compare(password, user.password)){
-                console.log(user)
                 return done(null, user);
             }else{
                 return done(null, false, {message: 'Password incorrect'})
@@ -21,6 +20,7 @@ function initialize(passport, getUserByUsername, getUserById){
     }
     const authenticateNewUser = async (req,username, password, done) => {
         const user = await getUserByUsername(username);
+        console.log(user)
         if(user == undefined){
             const user = req.body
             user.password = await bcrypt.hash(user.password,10);

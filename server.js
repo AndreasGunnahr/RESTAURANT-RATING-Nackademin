@@ -62,8 +62,8 @@ app.use(sassMiddleware({
 const initializePassport = require('./middleware/passport-config')
 initializePassport(
   passport,
-  username => db.one('Users', `username`, username),
-  id => db.one('Users', `id`, id)
+  username => db.one('users', `username`, username),
+  id => db.one('users', `id`, id)
 )
 
 var indexRouter = require('./routes/index');
