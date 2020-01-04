@@ -31,22 +31,6 @@ restaurantDB.all = (table, column, name) => {
     });
 };
 
-restaurantDB.allPosts = (table) => {
-    return new Promise((resolve, reject) => {
-        pool.query(`SELECT * FROM ${table}`, (err, results) => {
-            // console.log(JSON.parse(JSON.stringify(results)));
-            if(err){
-                return reject(err);
-            }
-            let result = JSON.parse(JSON.stringify(results));
-            result.forEach(post => {
-                post.tags = post.tags.trim().split(",");               
-            })
-            return resolve(result);
-        });
-    });
-};
-
 restaurantDB.one = (table, column, name) => {
     return new Promise((resolve, reject) => {
         pool.query(`SELECT * FROM ${table} WHERE ${column} = ?`, name, (err, results) => {
@@ -60,6 +44,54 @@ restaurantDB.one = (table, column, name) => {
         });
     });
 };
+
+restaurantDB.insert = async (table, object) => {
+    return new Promise((resolve, reject) => {
+        pool.query(`INSERT INTO ${table} SET ?`, object , (err, results) => {
+            if(err){
+                return reject(err);
+            }
+            return resolve(results.insertId);
+        });
+    });
+};
+
+restaurantDB.allCuisine = (table) => {
+    return new Promise((resolve, reject) => {
+        pool.query(`SELECT cuisine FROM ${table}`, (err, results) => {
+            if(err){
+                return reject(err);
+            }
+            let cuisine = [];
+            results.forEach(row => {
+                let result = row.cuisine.toLowerCase();
+                if(cuisine.includes(result)){
+
+                }else{
+                    cuisine.push(result);
+                }
+            })
+            return resolve(cuisine);
+        });
+    });
+};
+
+restaurantDB.allPosts = (table) => {
+    return new Promise((resolve, reject) => {
+        pool.query(`SELECT * FROM ${table}`, (err, results) => {
+            if(err){
+                return reject(err);
+            }
+            let result = JSON.parse(JSON.stringify(results));
+            result.forEach(post => {
+                post.tags = post.tags.trim().split(",");               
+            })
+            return resolve(result);
+        });
+    });
+};
+
+
 
 restaurantDB.deletePost = (table, postID) => {
     return new Promise((resolve, reject) => {
@@ -95,18 +127,6 @@ restaurantDB.updateCountComment = (table, postID) => {
         });
     });
 }
-
-restaurantDB.insert = async (table, object) => {
-    return new Promise((resolve, reject) => {
-        pool.query(`INSERT INTO ${table} SET ?`, object , (err, results) => {
-            if(err){
-                return reject(err);
-            }
-            return resolve(results.insertId);
-        });
-    });
-};
-
 
 restaurantDB.updateRating = (table,userID, postID) => {
     return new Promise((resolve, reject) => {

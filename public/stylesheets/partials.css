@@ -21,7 +21,7 @@ body {
 
 .overlay {
   display: none;
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.9);
@@ -161,15 +161,19 @@ nav ul .img__container:hover {
 .editCard {
   height: 225px;
   width: 100%;
+  max-width: 1200px;
   display: flex;
   background: #272F46;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .card__container img,
 .editCard img {
   height: 100%;
   min-width: 350px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .card__container .info__container,
@@ -274,6 +278,13 @@ nav ul .img__container:hover {
   font-family: "Montserrat", sans-serif;
   color: #A3B4D3;
   margin-top: 5px;
+}
+
+.card__container .bottom .city::first-letter,
+.card__container .bottom .cuisine::first-letter,
+.editCard .bottom .city::first-letter,
+.editCard .bottom .cuisine::first-letter {
+  text-transform: uppercase;
 }
 
 .card__container .bottom .cuisine,

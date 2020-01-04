@@ -3,10 +3,11 @@
 .active{
     color: red; 
 }
+
 // Overlay - start
 .overlay{
     display: none;
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100%;
     background: rgba(0,0,0,0.9);
@@ -139,12 +140,16 @@ nav{
 .editCard{
     height: 225px;
     width: 100%;
+    max-width: 1200px;
     display: flex;
     background: $dark-blue;
     margin-bottom: 20px;
+    border-radius: 5px;
     img{
         height: 100%;
         min-width: 350px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
     }
     .info__container{
         width: 100%;
@@ -212,7 +217,6 @@ nav{
     .bottom{
         margin-top: 25px;
         display: flex;
-        // align-items: center;
         .city,
         .cuisine{
             font-size: 1.2em;
@@ -220,6 +224,9 @@ nav{
             font-family: $header-font;
             color: $light-blue;
             margin-top: 5px;
+            &::first-letter{
+                text-transform: uppercase;
+            }
         }
         .cuisine{
             margin-left: 30px;  
@@ -457,3 +464,4 @@ nav{
         }
     }
 }
+

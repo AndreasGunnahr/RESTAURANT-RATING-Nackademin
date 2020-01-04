@@ -1,31 +1,9 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
-
+<div class = "overlay"></div>
 {{>navbar}}
 <div class = "main__container">
-    <div class = "sidemenu">
-       <div class = "region">
-           <a><i class="fas fa-map-marker-alt"></i>Region</a>
-       </div>
-       <div class = "region__list">
-           <div class = "city">
-               <input type = "checkbox">
-                <h1>Västmanland</h1>
-           </div>
-           <div class = "city">
-               <input type = "checkbox">
-                <h1>Norrland</h1>
-           </div>
-            <div class = "city">
-               <input type = "checkbox">
-                <h1>Stockholm</h1>
-           </div>
-            <div class = "city">
-               <input type = "checkbox">
-               <h1>Skåne</h1>
-           </div>
-           <button>Show more</button>
-        </div>
+    {{!-- <div class = "sidemenu">
          <div class = "cuisine">
            <a><i class="fas fa-utensils"></i>Cuisine</a>
        </div>
@@ -44,13 +22,34 @@
            </div>
             <button>Show more</button>
         </div>
-    </div>
+    </div> --}}
     <div class = "restaurant__container">
         <div class = "header">
-            <h1><i class="fas fa-utensils"></i>Restaurant Found: {{nrOfPosts}}</h1>
+            <h1 id = "restaurant__found"><i class="fas fa-utensils"></i>Restaurant Found: {{nrOfPosts}}</h1>
+            <div class = "sort__section">
+                <div class = "sort__cuisine">
+                    <button class = "dropdown__cuisineBtn">Cuisine <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown__cuisineContent">
+                        <a class = "search__cuisine">Reset</a>
+                        {{#each allCuisine}}
+                        <a class = "search__cuisine">{{this}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class = "sort__by">
+                    <button class = "dropdown__sortByBtn">Sort by <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown__sortByContent">
+                        <a class = "search__sortBy">Reset</a>
+                        <a class= "search__sortBy">Highest rating</a>
+                        <a class= "search__sortBy">Lowest rating</a>
+                        {{!-- <a id = "search__lowest">Most comments</a> --}}
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="restaurant__list">
             {{>cards}}
         </div>
     </div>
 </div>
+<script src = "/javascript/index.js"></script>
