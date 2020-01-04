@@ -1,4 +1,6 @@
 const stars = document.querySelectorAll('.star');
+const starsPost = document.getElementsByClassName('star__container')[0].children;
+const average = document.getElementsByClassName('average')[0].innerText;
 const commentBTN = document.getElementById('comment-btn');
 let ratingNumber; 
 
@@ -15,4 +17,8 @@ if(commentBTN){
             };
         })
     });
+}
+
+for(let x = 0; x < parseInt(average); x++){
+    starsPost[x].style.color = "#f1c40f";
 }

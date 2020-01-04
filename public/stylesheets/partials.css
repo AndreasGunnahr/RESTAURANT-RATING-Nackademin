@@ -217,17 +217,13 @@ nav ul .img__container:hover {
   font-size: 1.2rem;
   font-family: "Montserrat", sans-serif;
   color: #A3B4D3;
+  letter-spacing: 1px;
 }
 
 .card__container .top .comments i,
 .editCard .top .comments i {
   font-size: 1.6rem;
   margin-right: 5px;
-}
-
-.card__container .top .comments:hover,
-.editCard .top .comments:hover {
-  cursor: pointer;
 }
 
 .card__container .middle,

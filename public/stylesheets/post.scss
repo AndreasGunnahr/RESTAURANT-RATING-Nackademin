@@ -54,31 +54,25 @@
             margin: 0px 5px 0px 5px;
         }
     }
-    .star__container{
+    .header__section{
         display: flex;
-        align-items: center;
         margin-top: 20px;
-        direction: ltr;
-        a{
-            font-size: 1.5rem;
-            transition: 0.3s all;
-            color: $light-blue;
+        .star__container{
+            display: flex;
+            align-items: center;
+            direction: ltr;
+            a{
+                font-size: 1.5rem;
+                color: $light-blue;
+            }
         }
-        .s1{
-            color: $yellow;
+        .average{
+            margin: 0 0 0 7.5px;
+            font-size: 1.4rem;
         }
-        .s2{
-            color: $yellow;
-        }
-        .s3{
-            color: $yellow;
-        }
-        .s4{
-            color: $yellow;
-        }
-        h1{
-            margin: 0 0 0 10px;
-            font-size: 1.2rem;
+        .nrOfRatings{
+            font-size: 1.4rem;
+            margin: 0 0 0 15px;
         }
     }
     .comment__container{
@@ -127,7 +121,7 @@
                         align-items: center;
                         height: 30px;
                         font-family: $text-font;
-                        color: $light-blue;
+                        color: $dark-blue;
                         font-size: 1.1rem;
                         padding: 0;
                         margin: 1px 0 0 5px;
@@ -152,7 +146,7 @@
                 p{
                     font-family: $text-font;
                     font-size: 1.4rem;
-                    padding: 5px 5px 15px 5px; 
+                    padding: 5px 5px 15px 2.5px; 
                     &::first-letter{
                         text-transform: uppercase;
                     }

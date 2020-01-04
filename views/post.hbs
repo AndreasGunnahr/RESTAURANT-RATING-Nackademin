@@ -7,13 +7,24 @@
             <span class="tag">{{this}}</span>
         {{/each}}
     </div>
-     <div class="star__container">
-        <a class="fas fa-star s1"></a>
-        <a class="fas fa-star s2"></a>
-        <a class="fas fa-star s3"></a>
-        <a class="fas fa-star s4"></a>
-        <a class="fas fa-star s5"></a>
-        <h1>62% recommended</h1>
+    <div class = "header__section">
+        <div class="star__container">
+            <a class="fas fa-star s1"></a>
+            <a class="fas fa-star s2"></a>
+            <a class="fas fa-star s3"></a>
+            <a class="fas fa-star s4"></a>
+            <a class="fas fa-star s5"></a>
+        </div>
+        {{#if clickedPost.scoreRating}}
+            <h1 class = "average">{{clickedPost.scoreRating}}</h1>
+        {{else}}
+            <h1 class = "average">0</h1>
+        {{/if}}
+        {{#if clickedPost.nrOfRatings}}
+            <h1 class = "nrOfRatings">{{clickedPost.nrOfRatings}} Ratings</h1>
+        {{else}}
+            <h1 class = "nrOfRatings">0 Ratings</h1>
+        {{/if}}
     </div>
     <h1 class="description">Description</h1>
     <span>{{clickedPost.description}}</span>

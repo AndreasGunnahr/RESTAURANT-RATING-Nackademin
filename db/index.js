@@ -39,9 +39,8 @@ restaurantDB.allPosts = (table) => {
             }
             let result = JSON.parse(JSON.stringify(results));
             result.forEach(post => {
-                post.tags = post.tags.trim().split(",");                
+                post.tags = post.tags.trim().split(",");               
             })
-
             return resolve(result);
         });
     });
@@ -53,6 +52,9 @@ restaurantDB.one = (table, column, name) => {
             if(err){
                 return reject(err);
             }  
+            if(results[0].tags){
+                results[0].tags = results[0].tags.trim().split(',');
+            }
 
             return resolve(results[0]);
         });

@@ -177,12 +177,10 @@ nav{
             font-size: 1.2rem;
             font-family: $header-font;
             color: $light-blue;
+            letter-spacing: 1px;
             i{
                 font-size: 1.6rem;
                 margin-right: 5px;
-            }
-            &:hover{
-                cursor: pointer;
             }
         }
     }

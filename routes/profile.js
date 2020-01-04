@@ -8,18 +8,18 @@ var db = require('../db/index')
 
 /* GET profile page. */
 router.get('/', async function(req, res, next) {
-    var user = await req.user;
+    var user = req.user;
     res.render('profile', { 
-      style: 'profile.css',  //Finns ej
+      style: 'settingDashboard.css', 
       isAuthenticated: user,
       partial: function() {
-        return "dummy";
+        return "dashboard";
       }
     })
 })
 
 router.get('/create', async function(req, res, next){
-  var user = await req.user;
+  var user = req.user;
   res.render('profile', { 
     style: 'createPost.css',
     isAuthenticated: user,
@@ -45,10 +45,10 @@ router.get('/edit', async function(req, res, next){
 router.get('/settings', async function(req, res, next){
   var user = await req.user;
   res.render('profile', { 
-    style: 'profile.css',
+    style: 'settingDashboard.css',
     isAuthenticated: user,
     partial: function() {
-      return "dummy";
+      return "settings";
     }
   })
 });
