@@ -75,7 +75,7 @@ deleteBtn.forEach(btn => {
 
 yesBtn.addEventListener('click', (e) => {
     $.ajax({
-        url: 'http://localhost:3000/post/delete/' + postID,
+        url: 'https://rate-your-restaurant.herokuapp.com/post/delete/' + postID,
         type: 'DELETE',
     }).done(function(data){
         location.reload();
