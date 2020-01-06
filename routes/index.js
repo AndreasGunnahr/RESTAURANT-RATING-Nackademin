@@ -21,3 +21,11 @@ router.get('/', async function(req, res, next) {
 });
 
 module.exports = router;
+
+
+
+// form action = ""
+
+// addEventListener btn för att öppna update
+
+// e.target.

@@ -1,5 +1,10 @@
 @import '_global';
 
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 .active{
     color: red; 
 }

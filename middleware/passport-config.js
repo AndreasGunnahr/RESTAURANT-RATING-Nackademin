@@ -20,7 +20,6 @@ function initialize(passport, getUserByUsername, getUserById){
     }
     const authenticateNewUser = async (req,username, password, done) => {
         const user = await getUserByUsername(username);
-        console.log(user)
         if(user == undefined){
             const user = req.body
             user.password = await bcrypt.hash(user.password,10);

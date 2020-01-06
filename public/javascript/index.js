@@ -7,19 +7,48 @@ const searchCuisine = document.querySelectorAll('.search__cuisine');
 const searchSortBy = document.querySelectorAll('.search__sortBy');
 const cardsContainer = document.querySelectorAll('.card__container');
 const restaurantFound = document.getElementById('restaurant__found');
-
+const restaurantList = document.getElementById('restaurant__list')
 
 searchSortBy.forEach(btn => {
     btn.addEventListener('click', (e) => {
+        let store = [];
         sortByDropdownContent.classList.toggle('show');
         overlay.classList.toggle('show');
         let sortName = e.target.innerText;
         sortByDropdownBtn.innerHTML = `${sortName} <i class="fa fa-caret-down"></i>`;
         if(sortName == "Reset"){
             sortByDropdownBtn.innerHTML = `Sort by <i class="fa fa-caret-down"></i>`;
+            sortCards(store, 0, 0, sortName);
+            appendCards(store);
+        }
+        else if(sortName == "Highest rating"){
+            sortCards(store, -1, 1);
+            appendCards(store);
+        }
+        else if(sortName == "Lowest rating"){
+            sortCards(store, 1, -1);
+            appendCards(store);
         }
     })
 });
+
+function appendCards(store){
+    store.forEach(card => {
+        restaurantList.append(card);
+    })
+}
+
+function sortCards(store,order1, order2, sortName){
+    cardsContainer.forEach(card => {
+        store.push(card);
+    });
+    if(sortName != "Reset"){
+        store.sort((cardOne,cardTwo) => {
+            if(cardOne.attributes[2].value > cardTwo.attributes[2].value) return order1;
+            if(cardOne.attributes[2].value < cardTwo.attributes[2].value) return order2;
+        });
+    };
+}
 
 searchCuisine.forEach(btn => {
     btn.addEventListener('click', (e) => {

@@ -73,7 +73,6 @@ var registerRouter = require('./routes/register');
 var profileRouter = require('./routes/profile')
 var postRouter = require('./routes/post')
 
-
 app.use('/', indexRouter);
 app.use('/uploads', uploadsRouter);
 app.use('/login', loginRouter);
