@@ -2,29 +2,21 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var checkAuthenticated = require('../middleware/checkAuthenticated');
-var checkNotAuthenticated = require('../middleware/checkNotAuthenticated');
 var db = require('../db/index');
 
-const asyncGetData = async (req, res, next) => {
-    req.user = await req.user;
-    req.comments = await db.all('comments', 'post_id', req.params.id);
-    next()
-}
-
 /* POST a new post to the DB */ 
-router.post('/new', async function(req, res, next){
+router.post('/new', checkAuthenticated, async function(req, res, next){
     const insertPost = await db.insert('posts', req.body)
     res.redirect('/');
 });
 
 /* POST a new comment to the DB */ 
-router.post('/comment', async function(req, res, next){
+router.post('/comment', checkAuthenticated, async function(req, res, next){
     const insertComment = await db.insert('comments', req.body);
     const updateNrOfComment = await db.updateCountComment('posts', req.body.post_id )
-    res.json({data: "DONE!"});
 });
 
-router.post('/rating', async function(req,res,next){
+router.post('/rating', checkAuthenticated, async function(req,res,next){
     const user = await req.user;
     const data = {
         post_id: req.body.post_id,
@@ -33,23 +25,21 @@ router.post('/rating', async function(req,res,next){
     }
     const insertRating = await db.insert('ratings', data);
     const updateRating = await db.updateRating('posts', user.id, req.body.post_id);
-    res.json({data: "DONE! 2"});
 })
 
 /* DELETE a specific post from the the DB */ 
-router.delete('/delete/:id', async function(req, res, next){
+router.delete('/delete/:id', checkAuthenticated, async function(req, res, next){
     const deletePost = await db.deletePost('posts', req.params.id);
-    res.json({msg: deletePost})
 });
 
 /* UPDATE a specific post form the DB*/
-router.put('/update/:id', async function(req,res,next){
+router.put('/update/:id', checkAuthenticated, async function(req,res,next){
     const updatePost = await db.updatePost('posts', req.params.id, req.body);
     res.redirect('/profile/edit');
 });
 
 
-/* GET all info from a specific*/
+/* GET all info from a specific restaurant from the DB */
 router.get('/info/:id', async function(req, res, next){
     let clickedPost = await db.one('posts', 'id', req.params.id);
     res.json({clickedPost})

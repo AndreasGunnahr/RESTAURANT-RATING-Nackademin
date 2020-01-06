@@ -7,7 +7,7 @@ var db = require('../db/index')
 // checkAuthenticated
 
 /* GET profile page. */
-router.get('/', async function(req, res, next) {
+router.get('/', checkAuthenticated, async function(req, res, next) {
     var user = req.user;
     res.render('profile', { 
       style: 'settingDashboard.css', 
@@ -18,7 +18,7 @@ router.get('/', async function(req, res, next) {
     })
 })
 
-router.get('/create', async function(req, res, next){
+router.get('/create', checkAuthenticated, async function(req, res, next){
   var user = req.user;
   res.render('profile', { 
     style: 'createPost.css',
@@ -29,7 +29,7 @@ router.get('/create', async function(req, res, next){
   })
 });
 
-router.get('/edit', async function(req, res, next){
+router.get('/edit', checkAuthenticated, async function(req, res, next){
   var user = req.user;
   var allPosts = await db.allPosts('posts');
   res.render('profile', { 
@@ -42,7 +42,7 @@ router.get('/edit', async function(req, res, next){
   })
 });
 
-router.get('/settings', async function(req, res, next){
+router.get('/settings', checkAuthenticated, async function(req, res, next){
   var user = await req.user;
   res.render('profile', { 
     style: 'settingDashboard.css',
