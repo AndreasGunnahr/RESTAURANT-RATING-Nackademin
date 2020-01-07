@@ -30,22 +30,17 @@ nav{
     background: $dark-blue;
     color: $light-blue;
     border-bottom: 1px solid $light-blue;
-    .dropdown{
+    .logo{
         display: flex;
         align-items: center;
         h1{
-            padding: 10px;
+            font-family: $logo-font;
+            color: $white;
+            font-size: 3.5rem;
+            margin-left: 10px;
+            letter-spacing: 2px;
         }
-    }
-    .logo{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        img{
-            height: 60px;
-            width: 60px;
-            background: transparent;
-        }
+       
     }
     ul{
         height: 100%;
@@ -158,101 +153,105 @@ nav{
     }
     .info__container{
         width: 100%;
-        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 5%;
         h1{
             font-size: 1.8rem;
             letter-spacing: 1px;
             font-family: $header-font;
             color: $white;
         }
-    }
-    .top{
-        display: flex;
-        align-items: center;
-        .star__container{
-            margin-left: 20px;
-            direction: ltr;
-            a{
-                font-size: 1.5rem;
-                transition: 0.3s all;
+        .top{
+            display: flex;
+            align-items: center;
+            .star__container{
+                display: flex;
+                margin-left: 20px;
+                direction: ltr;
+                a{
+                    font-size: 1.5rem;
+                    transition: 0.3s all;
+                    color: $light-blue;
+                }
+                .average{
+                    margin-left: 5px;
+                    font-size: 1.2rem;
+                }
+            }
+            .comments{
+                margin-left: 20px;
+                font-size: 1.2rem;
+                font-family: $header-font;
+                color: $light-blue;
+                letter-spacing: 1px;
+                i{
+                    font-size: 1.6rem;
+                    margin-right: 5px;
+                }
+            }
+        }
+        .middle{
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            .tag{
+                margin-right: 7.5px;
+                padding: 7.5px;
+                background: transparent;
+                font-family: $header-font;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+                color: $light-blue;
+                border: 1px solid $light-blue;
+                &::first-letter{
+                    text-transform: uppercase;
+                }
+            }
+            h1{
+                margin-left: 20px;
+                font-size: 1.6rem;
+                letter-spacing: 1px;
+                font-family: $header-font;
                 color: $light-blue;
             }
         }
-        .average{
-            margin-left: 5px;
-            font-size: 1.2rem;
-        }
-        .comments{
-            margin-left: 20px;
-            font-size: 1.2rem;
-            font-family: $header-font;
-            color: $light-blue;
-            letter-spacing: 1px;
-            i{
-                font-size: 1.6rem;
-                margin-right: 5px;
-            }
-        }
-    }
-    .middle{
-        margin-top: 25px;
-        display: flex;
-        align-items: center;
-        .tag{
-            margin-right: 7.5px;
-            padding: 7.5px;
-            background: transparent;
-            font-family: $header-font;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            color: $light-blue;
-            border: 1px solid $light-blue;
-            &::first-letter{
-                text-transform: uppercase;
-            }
-        }
-        h1{
-            margin-left: 20px;
-            font-size: 1.6rem;
-            letter-spacing: 1px;
-            font-family: $header-font;
-            color: $light-blue;
-        }
-    }
-    .bottom{
-        margin-top: 25px;
-        display: flex;
-        .city,
-        .cuisine{
-            font-size: 1.2em;
-            letter-spacing: 1px;
-            font-family: $header-font;
-            color: $light-blue;
-            margin-top: 5px;
-            &::first-letter{
-                text-transform: uppercase;
-            }
-        }
-        .cuisine{
-            margin-left: 30px;  
-        }
-        .cuisine-text{
+        .bottom{
+            margin-top: 25px;
             display: flex;
-            flex-direction: column;
-            h1{
-                color: $white;
-                font-size: 1.4rem;
+            .city,
+            .cuisine{
+                font-size: 1.2em;
                 letter-spacing: 1px;
-                margin-left: 30px;      
-            }   
-        }
-        .city-text{
-            display: flex;
-            flex-direction: column;
-            h1{
-                color: $white;
-                font-size: 1.4rem;
-                letter-spacing: 1px;
+                font-family: $header-font;
+                color: $light-blue;
+                margin-top: 5px;
+                &::first-letter{
+                    text-transform: uppercase;
+                }
+            }
+            .cuisine{
+                margin-left: 30px;  
+            }
+            .cuisine-text{
+                display: flex;
+                flex-direction: column;
+                h1{
+                    color: $white;
+                    font-size: 1.4rem;
+                    letter-spacing: 1px;
+                    margin-left: 30px;      
+                }   
+            }
+            .city-text{
+                display: flex;
+                flex-direction: column;
+                h1{
+                    color: $white;
+                    font-size: 1.4rem;
+                    letter-spacing: 1px;
+                }
             }
         }
     }
@@ -470,3 +469,169 @@ nav{
     }
 }
 
+@media screen and (max-width: 1000px){
+    .card__container,
+    .editCard{
+        img{
+            min-width: 300px;
+            max-width: 300px;
+        }
+        .info__container{
+            padding-left: 0;
+            justify-content: center;
+            align-items: center;
+            h1{
+                text-align: center;
+                font-size: 1.8rem;
+            }
+            .top{
+                display: block;
+                .star__container{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 20px 0 0 0;
+                    direction: ltr;
+                    a{
+                        font-size: 1.6rem;
+                    }
+                    .average{
+                        margin-left: 5px;
+                        font-size: 1.4rem;
+                    }
+                }
+                a.comments{
+                    font-size: 1.4rem;
+                    i{
+                        font-size: 1.6rem;
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .middle{
+                display: none;
+            }
+            .bottom{
+                margin-top: 20px;
+                .city,
+                .cuisine{
+                    font-size: 1.2em;
+                }
+                .cuisine-text{
+                    h1{
+                        font-size: 1.4rem;    
+                    }   
+                }
+                .city-text{
+                    h1{
+                        text-align: left;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 620px){
+    .card__container,
+    .editCard{
+        img{
+            display: none;
+        }
+    }
+    .info__container{
+        padding: 5%;
+    }
+}
+
+
+@media screen and (max-width: 479px){
+    nav{
+        display: none;
+    }
+    .card__container,
+    .editCard{
+        height: 175px;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        background: $dark-blue;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        img{
+            display: none;
+        }
+        .info__container{
+            width: 100%;
+            height: 100%;
+            padding: 5%;
+            h1{
+                font-size: 1.6rem;
+            }
+            .top{
+                display: block;
+                text-align: center;
+                .star__container{
+                    display: flex;
+                    justify-content: center;
+                    margin: 10px 0 0 0;
+                    direction: ltr;
+                    a{
+                        font-size: 1.6rem;
+                    }
+                    .average{
+                        margin-left: 5px;
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .comments{
+                    display: none;
+                }
+            }
+            .middle{
+                margin-top: 10px;
+                display: none;
+                .tag{
+                    display:none;
+                }
+                h1{
+                    margin-left: 10px;
+                    font-size: 1.4rem;
+                    letter-spacing: 1px;
+                    font-family: $header-font;
+                    color: $light-blue;
+                }
+            }
+            .bottom{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                .city,
+                .cuisine{
+                    font-size: 1.2em;
+                    margin-top: 5px;
+                }
+                .cuisine{
+                    margin-left: 30px;  
+                }
+                .cuisine-text{
+                    display: flex;
+                    flex-direction: column;
+                    h1{
+                        font-size: 1.2rem;
+                        margin-left: 30px;      
+                    }   
+                }
+                .city-text{
+                    display: flex;
+                    flex-direction: column;
+                    h1{
+                        color: $white;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }     
+}

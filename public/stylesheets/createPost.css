@@ -1,23 +1,32 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 /* Global variables */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
   font-size: 10px;
 }
 
+body {
+  position: relative;
+}
+
 .main__container {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 240px 1fr;
+  -ms-grid-columns: 240px 1fr;
+      grid-template-columns: 240px 1fr;
   background: #171B26;
 }
 
 .main__container .main__content {
+  -ms-grid-column: 2;
   grid-column: 2;
   height: calc(100vh - 80px);
   padding: 3%;
@@ -25,15 +34,28 @@ html {
 
 .main__container .main__content .create__container {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main__container .main__content .create__container .header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main__container .main__content .create__container .header__container h1 {
@@ -60,8 +82,13 @@ html {
 }
 
 .main__container .main__content .create__container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main__container .main__content .create__container form label {
@@ -86,8 +113,12 @@ html {
 .main__container .main__content .create__container form .tag__container,
 .main__container .main__content .create__container form .city__container,
 .main__container .main__content .create__container form .cuisine__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main__container .main__content .create__container form .tag__container button,
@@ -125,8 +156,13 @@ html {
 }
 
 .main__container .main__content .box .box__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main__container .main__content .box .box__input h1 {
@@ -138,8 +174,12 @@ html {
 }
 
 .main__container .main__content .box .box__input .file__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main__container .main__content .box .box__input .file__container .box__file {
@@ -172,3 +212,4 @@ html {
 .main__container .main__content .box .box__input .file__container span::first-letter {
   text-transform: uppercase;
 }
+/*# sourceMappingURL=createPost.css.map */

@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 /* Global variables */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -21,28 +23,46 @@ body {
 
 .main__container {
   min-height: calc(100vh - 80px);
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   background: #171B26;
   overflow-y: hidden;
-  padding: 30px 30px 30px 30px;
+  padding: 30px 30px 0 30px;
 }
 
 .main__container .restaurant__container {
   height: 100vh;
   width: 100%;
+  -ms-grid-row: 1;
   grid-row: 1;
+  -ms-grid-column: 1;
   grid-column: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main__container .restaurant__container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   max-width: 1200px;
   width: 100%;
   margin-bottom: 20px;
@@ -52,6 +72,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: white;
   letter-spacing: 1px;
+  font-size: 2.3rem;
 }
 
 .main__container .restaurant__container .header h1 i {
@@ -59,6 +80,8 @@ body {
 }
 
 .main__container .restaurant__container .header .sort__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -126,9 +149,15 @@ body {
   letter-spacing: 1px;
   cursor: pointer;
   border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main__container .restaurant__container .header .sort__section button i {
@@ -141,7 +170,88 @@ body {
   width: 100%;
   overflow-y: scroll;
   margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+@media screen and (max-width: 1000px) {
+  .main__container {
+    padding: 30px 10px 30px 10px;
+  }
+  .main__container .restaurant__container .header {
+    display: block;
+    text-align: center;
+  }
+  .main__container .restaurant__container .header .sort__section {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 10px;
+  }
+  .main__container .restaurant__container .header .sort__section button {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main__container {
+    padding: 30px 10px 30px 10px;
+  }
+  .main__container .restaurant__container .header {
+    display: block;
+    text-align: center;
+  }
+  .main__container .restaurant__container .header h1 {
+    font-size: 1.8rem;
+  }
+  .main__container .restaurant__container .header h1 i {
+    margin-right: 10px;
+  }
+  .main__container .restaurant__container .header .sort__section {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 10px;
+  }
+  .main__container .restaurant__container .header .sort__section button {
+    min-width: 80px;
+    max-width: 140px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  .main__container .restaurant__container .header .sort__section button i {
+    font-size: 1.4rem;
+    margin-left: 5px;
+  }
+  .main__container .restaurant__container .header .sort__section .sort__cuisine .dropdown__cuisineBtn,
+  .main__container .restaurant__container .header .sort__section .sort__cuisine .dropdown__sortByBtn,
+  .main__container .restaurant__container .header .sort__section .sort__by .dropdown__cuisineBtn,
+  .main__container .restaurant__container .header .sort__section .sort__by .dropdown__sortByBtn {
+    position: relative;
+    outline: none;
+  }
+  .main__container .restaurant__container .header .sort__section .sort__cuisine .dropdown__cuisineContent,
+  .main__container .restaurant__container .header .sort__section .sort__cuisine .dropdown__sortByContent,
+  .main__container .restaurant__container .header .sort__section .sort__by .dropdown__cuisineContent,
+  .main__container .restaurant__container .header .sort__section .sort__by .dropdown__sortByContent {
+    min-width: 150px;
+  }
+  .main__container .restaurant__container .header .sort__section .sort__cuisine .dropdown__cuisineContent,
+  .main__container .restaurant__container .header .sort__section .sort__by .dropdown__cuisineContent {
+    max-height: 200px;
+  }
+  .main__container .restaurant__container .header .sort__section a {
+    font-family: "Montserrat", sans-serif;
+    color: #272F46;
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=home.css.map */

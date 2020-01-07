@@ -11,7 +11,7 @@
     grid-template-columns: 1fr;
     background: $dark-dark-blue;
     overflow-y: hidden;
-    padding: 30px 30px 30px 30px;
+    padding: 30px 30px 0 30px;
     .restaurant__container{
         height: 100vh;
         width: 100%;
@@ -31,6 +31,7 @@
                 font-family: $header-font;
                 color: $white;
                 letter-spacing: 1px;
+                font-size: 2.3rem;
                 i{
                     margin-right: 10px;
                 }
@@ -110,6 +111,77 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+    }
+}
+@media screen and (max-width: 1000px){
+    .main__container{
+        padding: 30px 10px 30px 10px;
+        .restaurant__container{
+            .header{
+                display: block;
+                text-align: center;
+                .sort__section{
+                    justify-content: center;
+                    margin-top: 10px;
+                    button{
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 425px){
+    .main__container{
+        padding: 30px 10px 30px 10px;
+        .restaurant__container{
+            .header{
+                display: block;
+                text-align: center;
+                h1{
+                    font-size: 1.8rem;
+                    i{
+                        margin-right: 10px;
+                    }
+                }
+                .sort__section{
+                    justify-content: center;
+                    margin-top: 10px;
+                    button{
+                        min-width: 80px;
+                        max-width: 140px;
+                        font-size: 1.2rem;
+                        margin-top: 10px;
+                        i{
+                            font-size: 1.4rem;
+                            margin-left: 5px;
+                        }
+                    }
+                    .sort__cuisine,
+                    .sort__by{
+                        .dropdown__cuisineBtn,
+                        .dropdown__sortByBtn{
+                            position: relative;
+                            outline: none; 
+                        }
+                        .dropdown__cuisineContent,
+                        .dropdown__sortByContent{
+                            min-width: 150px;
+                        }
+                        .dropdown__cuisineContent{
+                            max-height: 200px;
+                        }
+                    }
+                    a{
+                        font-family: $header-font;
+                        color: $dark-blue;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
         }
     }
 }

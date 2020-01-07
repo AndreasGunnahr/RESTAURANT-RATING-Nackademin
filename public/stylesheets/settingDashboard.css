@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 /* Global variables */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -16,12 +18,15 @@ body {
 }
 
 .main__container {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 240px 1fr;
+  -ms-grid-columns: 240px 1fr;
+      grid-template-columns: 240px 1fr;
   background: #171B26;
 }
 
 .main__container .main__content {
+  -ms-grid-column: 2;
   grid-column: 2;
   height: calc(100vh - 80px);
   padding: 3%;
@@ -34,3 +39,4 @@ body {
   color: white;
   letter-spacing: 1px;
 }
+/*# sourceMappingURL=settingDashboard.css.map */

@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var checkAuthenticated = require('../middleware/checkAuthenticated');
 var checkNotAuthenticated = require('../middleware/checkNotAuthenticated')
 
 

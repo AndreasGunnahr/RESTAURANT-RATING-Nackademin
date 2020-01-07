@@ -10,17 +10,17 @@
                 <a class="fas fa-star s3"></a>
                 <a class="fas fa-star s4"></a>
                 <a class="fas fa-star s5"></a>
-            </div>
-            {{#if this.scoreRating}}
+               {{#if this.scoreRating}}
                 <h1 class = "average">{{this.scoreRating}}</h1>
-            {{else}}
-                <h1 class = "average">0</h1>
-            {{/if}}
-            {{#if this.nrOfComments}}
-                <a class = "comments"><i class="fas fa-comments"></i>{{this.nrOfComments}} comments</a>
-            {{else}}
-                <a class = "comments"><i class="fas fa-comments"></i>0 comments</a>
-            {{/if}}
+                {{else}}
+                    <h1 class = "average">0</h1>
+                {{/if}}
+                {{#if this.nrOfComments}}
+                    <a class = "comments"><i class="fas fa-comments"></i>{{this.nrOfComments}} comments</a>
+                {{else}}
+                    <a class = "comments"><i class="fas fa-comments"></i>0 comments</a>
+                {{/if}}
+            </div>
         </div>
         <div class="middle">
             {{#each this.tags}}
