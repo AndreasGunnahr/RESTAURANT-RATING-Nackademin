@@ -9,13 +9,9 @@ var db = require('../db/index')
 /* GET profile page. */
 router.get('/', checkAuthenticated, async function(req, res, next) {
     var user = req.user;
-    // if(user.admin == 1){
-    //     let admin = true;
-    // }
     res.render('profile', { 
       style: 'settingDashboard.css', 
       isAuthenticated: user,
-      admin: admin,
       partial: function() {
         return "dashboard";
       }
