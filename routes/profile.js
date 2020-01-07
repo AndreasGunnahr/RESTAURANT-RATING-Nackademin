@@ -9,6 +9,7 @@ var db = require('../db/index')
 /* GET profile page. */
 router.get('/', checkAuthenticated, async function(req, res, next) {
     var user = req.user;
+    console.log(user.admin)
     res.render('profile', { 
       style: 'settingDashboard.css', 
       isAuthenticated: user,
