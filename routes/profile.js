@@ -4,8 +4,6 @@ var passport = require('passport');
 var checkAuthenticated = require('../middleware/checkAuthenticated');
 var checkAdminAuthenticated = require('../middleware/checkAdminAuthenticated');
 var db = require('../db/index')
-// var checkNotAuthenticated = require('../middleware/checkNotAuthenticated')
-// checkAuthenticated
 
 /* GET profile page. */
 router.get('/', checkAuthenticated, async function(req, res, next) {

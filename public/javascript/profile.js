@@ -39,7 +39,7 @@ editBtn.forEach(btn => {
         overlay.style.display = "block";
         editContainer.style.display = "flex";
         $.ajax({
-            url: 'https://rate-your-restaurant.herokuapp.com/post/info/' + postID,
+            url: '/post/info/' + postID,
             type: 'GET'
         }).done(function(data){
             document.getElementById('edit__title').innerText = data.clickedPost.title;
@@ -69,13 +69,12 @@ deleteBtn.forEach(btn => {
         postID = e.target.attributes[0].value;
         overlay.style.display = "block";
         deleteContainer.style.display = "block"
-
     });
 });
 
 yesBtn.addEventListener('click', (e) => {
     $.ajax({
-        url: 'https://rate-your-restaurant.herokuapp.com/post/delete/' + postID,
+        url: '/post/delete/' + postID,
         type: 'DELETE',
     }).done(function(data){
         location.reload();

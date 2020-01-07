@@ -29,7 +29,9 @@ router.post('/rating', checkAuthenticated, async function(req,res,next){
 
 /* DELETE a specific post from the the DB */ 
 router.delete('/delete/:id', checkAuthenticated, async function(req, res, next){
+    console.log("här")
     const deletePost = await db.deletePost('posts', req.params.id);
+    res.json({data: "Record successfully deleted"})
 });
 
 /* UPDATE a specific post form the DB*/
