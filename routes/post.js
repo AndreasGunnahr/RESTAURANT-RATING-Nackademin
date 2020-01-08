@@ -14,6 +14,7 @@ router.post('/new', checkAuthenticated, async function(req, res, next){
 router.post('/comment', checkAuthenticated, async function(req, res, next){
     const insertComment = await db.insert('comments', req.body);
     const updateNrOfComment = await db.updateCountComment('posts', req.body.post_id )
+    res.json({data: "Comment added!"})
 });
 
 router.post('/rating', checkAuthenticated, async function(req,res,next){

@@ -19,7 +19,7 @@ if(commentBTN){
         }
         let commentStructure = 
         `<div class = "header">
-            <img src = "/images/profile.jpg">
+            <img src = "/images/avatar.png">
             <h1>${username}</h1>
             <span>${date}</span>
             <div class="commentStars__container">
