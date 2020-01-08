@@ -403,11 +403,11 @@ nav ul .img__container:hover {
 
 .delete__container {
   display: none;
-  position: absolute;
+  position: fixed;
   height: 225px;
   width: 300px;
   background: #171B26;
-  top: calc(50% - 80px);
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 5px;
