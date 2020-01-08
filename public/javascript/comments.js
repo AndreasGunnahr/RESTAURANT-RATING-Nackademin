@@ -43,11 +43,10 @@ if(commentBTN){
                 stars: counter
             }
         }).done(function(data){
+            console.log("här")
             commentBTN.disabled = true;
             stars.forEach(star => {
-                for(let x = 0; x <= 4; x++){
-                    star.style.color = "#A3B4D3";
-                }
+                star.style.color = "#A3B4D3";
             });
         });
         $.ajax({
@@ -57,8 +56,6 @@ if(commentBTN){
                 score: counter.length,
                 post_id: postID
             }
-        }).done(function(data){
-
-        }); 
+        })
     });
 }
