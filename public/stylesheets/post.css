@@ -5,8 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -19,16 +18,9 @@ body {
 
 .main__post {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   padding: 5% 10% 5% 10%;
   background: #171B26;
 }
@@ -59,7 +51,7 @@ body {
   padding: 0 30px;
 }
 
-.main__post span {
+.main__post .description__text {
   width: 100%;
   max-width: 1000px;
   font-family: "Nunito", sans-serif;
@@ -72,38 +64,32 @@ body {
 }
 
 .main__post .tag__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-top: 20px;
 }
 
 .main__post .tag__container span {
   font-family: "Nunito", sans-serif;
-  color: #A3B4D3;
+  color: white;
   font-size: 1.4rem;
   padding: 2.5px 30px 2.5px 30px;
   border: 2px solid #A3B4D3;
   margin: 0px 5px 0px 5px;
 }
 
+.main__post .tag__container span::first-letter {
+  text-transform: uppercase;
+}
+
 .main__post .header__section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 20px;
 }
 
 .main__post .header__section .star__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   direction: ltr;
 }
 
@@ -125,16 +111,9 @@ body {
 .main__post .comment__container {
   width: 100%;
   max-width: 1000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 30px;
   padding: 0 30px 50px 30px;
 }
@@ -161,8 +140,6 @@ body {
 }
 
 .main__post .comment__container .showComment__container .comment .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -173,12 +150,8 @@ body {
 }
 
 .main__post .comment__container .showComment__container .comment .header h1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   height: 30px;
   margin: 0 0 0 10px;
   font-family: "Montserrat", sans-serif;
@@ -187,13 +160,8 @@ body {
 }
 
 .main__post .comment__container .showComment__container .comment .header span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  width: 150px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   height: 30px;
   font-family: "Nunito", sans-serif;
   color: #272F46;
@@ -203,16 +171,9 @@ body {
 }
 
 .main__post .comment__container .showComment__container .comment .header .commentStars__container {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   direction: rtl;
   margin-bottom: 1px;
 }
@@ -231,6 +192,7 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 1.4rem;
   padding: 5px 5px 15px 2.5px;
+  word-break: break-all;
 }
 
 .main__post .comment__container .showComment__container .comment p::first-letter {
@@ -249,12 +211,8 @@ body {
 .main__post .comment__container .post__container .rate__container {
   width: 100%;
   max-width: 1000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -267,18 +225,13 @@ body {
 }
 
 .main__post .comment__container .post__container .rate__container .stars__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   direction: rtl;
 }
 
 .main__post .comment__container .post__container .rate__container .stars__container a {
   font-size: 2rem;
-  -webkit-transition: 0.3s all;
   transition: 0.3s all;
   color: #A3B4D3;
   margin-left: 5px;
@@ -314,12 +267,8 @@ body {
 }
 
 .main__post .comment__container .post__container .comment__section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .main__post .comment__container .post__container .comment__section input {
@@ -349,15 +298,9 @@ body {
 .main__post .comment__container .post__container .signPost {
   width: 100%;
   height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   font-family: "Montserrat", sans-serif;
   color: white;
   letter-spacing: .5px;
@@ -372,4 +315,103 @@ body {
 .main__post .comment__container .post__container .signPost:hover {
   cursor: pointer;
 }
-/*# sourceMappingURL=post.css.map */
+
+@media screen and (max-width: 769px) {
+  .main__post {
+    padding: 5%;
+  }
+  .main__post h1 {
+    font-size: 2.25rem;
+    margin-top: 20px;
+  }
+  .main__post .description {
+    padding: 0;
+  }
+  .main__post .description__text {
+    font-size: 1.4rem;
+    padding: 0;
+  }
+  .main__post .tag__container span {
+    font-size: 1.4rem;
+    padding: 2.5px 30px 2.5px 30px;
+  }
+  .main__post .header__section .star__container a {
+    font-size: 1.4rem;
+  }
+  .main__post .header__section .average {
+    font-size: 1.4rem;
+  }
+  .main__post .header__section .nrOfRatings {
+    font-size: 1.4rem;
+  }
+  .main__post .comment__container {
+    padding: 0;
+  }
+  .main__post .comment__container .h1__header {
+    font-size: 2.25rem;
+  }
+  .main__post .comment__container .showComment__container .comment {
+    margin-top: 5px;
+  }
+  .main__post .comment__container .showComment__container .comment .header {
+    display: flex;
+  }
+  .main__post .comment__container .showComment__container .comment .header h1 {
+    font-size: 1.4rem;
+  }
+  .main__post .comment__container .showComment__container .comment .header span {
+    font-size: 1.0rem;
+  }
+  .main__post .comment__container .showComment__container .comment .header .commentStars__container {
+    margin-left: 5px;
+  }
+  .main__post .comment__container .showComment__container .comment .header .commentStars__container a {
+    font-size: 1.05rem;
+  }
+  .main__post .comment__container .showComment__container .comment p {
+    font-size: 1.2rem;
+    padding: 5px 5px 15px 2.5px;
+  }
+  .main__post .comment__container .post__container {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .main__post .comment__container .post__container h1 {
+    margin: 0;
+  }
+  .main__post .comment__container .post__container .rate__container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .main__post .comment__container .post__container .rate__container p {
+    font-size: 1.2rem;
+    margin: 10px 0 0 0;
+  }
+  .main__post .comment__container .post__container .rate__container .stars__container {
+    display: flex;
+    justify-content: flex-end;
+    direction: rtl;
+  }
+  .main__post .comment__container .post__container .rate__container .stars__container a {
+    font-size: 1.8rem;
+  }
+  .main__post .comment__container .post__container .comment__section input {
+    font-size: 1.2rem;
+    width: 100%;
+    height: 50px;
+  }
+  .main__post .comment__container .post__container .comment__section button {
+    width: 140px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+  .main__post .comment__container .post__container .signPost {
+    width: 100%;
+    height: 50px;
+    font-size: 2rem;
+  }
+}

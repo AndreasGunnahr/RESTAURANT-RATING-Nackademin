@@ -12,7 +12,7 @@ if(cards){
         }
         card.addEventListener('click', () => {
             const postID = card.id;
-            location.href = 'https://rate-your-restaurant.herokuapp.com/post/' + postID;
+            location.href = '/post/' + postID;
         })
     });
 }

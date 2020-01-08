@@ -30,7 +30,7 @@
         max-width: 1000px;
         padding: 0 30px;
     }
-    span{
+    .description__text{
         width: 100%;
         max-width: 1000px;
         font-family: $text-font;
@@ -47,11 +47,14 @@
         margin-top: 20px;
         span{
             font-family: $text-font;
-            color: $light-blue;
+            color: $white;
             font-size: 1.4rem;
             padding: 2.5px 30px 2.5px 30px;
             border: 2px solid $light-blue;
             margin: 0px 5px 0px 5px;
+            &::first-letter{
+                text-transform: uppercase;
+            }
         }
     }
     .header__section{
@@ -116,8 +119,8 @@
                         color: black;
                     }
                     span{
+                        // width: 150px;
                         display: flex;
-                        width: 150px;
                         align-items: center;
                         height: 30px;
                         font-family: $text-font;
@@ -127,7 +130,6 @@
                         margin: 1px 0 0 5px;
                     }
                     .commentStars__container{
-                        width: 100%;
                         display: flex;
                         justify-content: flex-end;
                         align-items: center;
@@ -147,6 +149,7 @@
                     font-family: $text-font;
                     font-size: 1.4rem;
                     padding: 5px 5px 15px 2.5px; 
+                    word-break: break-all;
                     &::first-letter{
                         text-transform: uppercase;
                     }
@@ -249,6 +252,117 @@
                 text-decoration: none;
                 &:hover{
                     cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 769px){
+    .main__post{
+        padding: 5%;
+        h1{
+            font-size: 2.25rem;
+            margin-top: 20px;
+        }
+        .description{
+            padding: 0;
+        }
+        .description__text{
+            font-size: 1.4rem;
+            padding: 0;
+        }
+        .tag__container{
+            span{
+                font-size: 1.4rem;
+                padding: 2.5px 30px 2.5px 30px;
+            }
+        }
+        .header__section{
+            .star__container{
+                a{
+                    font-size: 1.4rem;
+                }
+            }
+            .average{
+                font-size: 1.4rem;
+            }
+            .nrOfRatings{
+                font-size: 1.4rem;
+            }
+        }
+        .comment__container{
+            padding: 0;
+            .h1__header{
+               font-size: 2.25rem;
+            }
+            .showComment__container{
+                .comment{
+                    margin-top: 5px;
+                    .header{
+                        display: flex;;
+                        h1{
+                            font-size: 1.4rem;
+                        }
+                        span{
+                            font-size: 1.0rem;
+                        }
+                        .commentStars__container{
+                            margin-left: 5px;
+                            a{
+                                font-size: 1.05rem;
+                            }
+                        }
+                    }
+                    p{
+                        font-size: 1.2rem;
+                        padding: 5px 5px 15px 2.5px; 
+                    }
+                }
+            }
+            .post__container{
+                width: 100%;
+                margin-top: 20px;
+                h1{
+                   margin: 0;
+                }
+                .rate__container{
+                    width: 100%;
+                    max-width: 1000px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-bottom: 20px;
+                    p{
+                        font-size: 1.2rem;
+                        margin: 10px 0 0 0;
+                    }
+                    .stars__container{
+                        display: flex;
+                        justify-content: flex-end;
+                        direction: rtl;
+                        a{
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+                .comment__section{
+                    input{
+                        font-size: 1.2rem;
+                        width: 100%;
+                        height: 50px;
+                    }
+                    button{
+                        width: 140px;
+                        height: 50px;
+                        font-size: 1.1rem;
+                    } 
+                }
+                .signPost{
+                    width: 100%;
+                    height: 50px;
+                    font-size: 2rem;
                 }
             }
         }
