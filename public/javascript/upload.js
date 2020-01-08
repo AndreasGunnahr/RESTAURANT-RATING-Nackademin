@@ -10,9 +10,6 @@ uploadImagePost.addEventListener('change', () => {
     selectedFileSpan.innerText = filename + " selected";
 })
 
-// postImgForm.submit(); för att posta bilden. 
-// Behöver kolla ifall man har fyllt i alla fält + valt en bild. 
-// Kolla längden på tagen och antalen. 
 postBtn.addEventListener('click', () => {
     if(selectedFileSpan.innerText != "No file selected"){
         let nameIMG = selectedFileSpan.innerText.split(" ")[0];
