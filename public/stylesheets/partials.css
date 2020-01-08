@@ -16,6 +16,10 @@ body {
   position: relative;
 }
 
+.toggle {
+  display: flex !important;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -105,8 +109,8 @@ nav ul .profile__dropdown .profile__dropdownContent a:hover {
   cursor: pointer;
 }
 
-nav ul .profile__dropdown:hover .profile__dropdownContent {
-  display: flex;
+nav ul .profile__dropdown .profile__dropdownContent a i {
+  pointer-events: none;
 }
 
 nav ul button {

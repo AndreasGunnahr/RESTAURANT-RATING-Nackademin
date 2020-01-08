@@ -1,5 +1,8 @@
 @import '_global';
 
+.toggle{
+    display: flex !important;
+}
 
 ::-webkit-scrollbar {
     display: none;
@@ -80,11 +83,11 @@ nav{
                         border-radius: 5px;
                         cursor: pointer;
                     }
+                    i{
+                        pointer-events: none;
+                    }
                 }
             }
-        }
-        .profile__dropdown:hover .profile__dropdownContent{
-            display: flex;
         }
         button{
             font-family: $header-font;
