@@ -5,8 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -18,44 +17,29 @@ body {
 }
 
 .main__container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 240px 1fr;
-      grid-template-columns: 240px 1fr;
   background: #171B26;
 }
 
 .main__container .main__content {
-  -ms-grid-column: 2;
-  grid-column: 2;
-  height: calc(100vh - 80px);
-  padding: 3%;
+  height: 100%;
+  min-height: calc(100vh - 80px);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .main__container .main__content .create__container {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  max-width: 1400px;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .main__container .main__content .create__container .header__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main__container .main__content .create__container .header__container h1 {
@@ -82,13 +66,8 @@ body {
 }
 
 .main__container .main__content .create__container form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .main__container .main__content .create__container form label {
@@ -113,12 +92,8 @@ body {
 .main__container .main__content .create__container form .tag__container,
 .main__container .main__content .create__container form .city__container,
 .main__container .main__content .create__container form .cuisine__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .main__container .main__content .create__container form .tag__container button,
@@ -156,13 +131,8 @@ body {
 }
 
 .main__container .main__content .box .box__input {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .main__container .main__content .box .box__input h1 {
@@ -174,12 +144,8 @@ body {
 }
 
 .main__container .main__content .box .box__input .file__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .main__container .main__content .box .box__input .file__container .box__file {
@@ -212,4 +178,87 @@ body {
 .main__container .main__content .box .box__input .file__container span::first-letter {
   text-transform: uppercase;
 }
-/*# sourceMappingURL=createPost.css.map */
+
+@media screen and (max-width: 1000px) {
+  .main__container .main__content .create__container .header__container h1 {
+    font-size: 2.25rem;
+  }
+  .main__container .main__content .create__container .header__container button {
+    height: 40px;
+    width: 160px;
+    font-size: 1.3rem;
+  }
+  .main__container .main__content .create__container form label {
+    font-size: 1.6rem;
+  }
+  .main__container .main__content .create__container form input {
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  .main__container .main__content .create__container form .tag__container,
+  .main__container .main__content .create__container form .city__container,
+  .main__container .main__content .create__container form .cuisine__container {
+    display: flex;
+    align-items: center;
+  }
+  .main__container .main__content .create__container form .tag__container button,
+  .main__container .main__content .create__container form .city__container button,
+  .main__container .main__content .create__container form .cuisine__container button {
+    height: 40px;
+    width: 160px;
+    font-size: 1.3rem;
+  }
+  .main__container .main__content .create__container form textarea {
+    height: 150px;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .main__container {
+    min-height: 100vh;
+  }
+  .main__container .main__content .create__container .header__container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .main__container .main__content .create__container .header__container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .main__container .main__content .create__container .header__container button {
+    height: 40px;
+    width: 140px;
+    font-size: 1.2rem;
+  }
+  .main__container .main__content .create__container form label {
+    font-size: 1.4rem;
+  }
+  .main__container .main__content .create__container form input {
+    height: 40px;
+    font-size: 1.4rem;
+  }
+  .main__container .main__content .create__container form .tag__container,
+  .main__container .main__content .create__container form .city__container,
+  .main__container .main__content .create__container form .cuisine__container {
+    display: flex;
+    align-items: center;
+  }
+  .main__container .main__content .create__container form textarea {
+    height: 150px;
+    font-size: 1.2rem;
+  }
+  .main__container .main__content .box .box__input h1 {
+    font-size: 1.4rem;
+  }
+  .main__container .main__content .box .box__input .file__container #browse {
+    padding: 12.5px;
+    width: 140px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .main__container .main__content .box .box__input .file__container span {
+    font-size: 1.2rem;
+  }
+}

@@ -5,7 +5,17 @@
     {{#if isAuthenticated}}
         <ul>
             <a href = "/">Home</a>
-            <a href = "/profile">Profile</a>
+            <div class = "profile__dropdown">
+                <a class = "profile__dropdownBtn" href = "/profile">Profile <i class="fa fa-caret-down"></i></a>
+                <div class = "profile__dropdownContent">
+                    <a href = "/profile">Dashboard</a>
+                    {{#if isAuthenticated.admin}}
+                        <a href = "/profile/create">Create post</a>
+                        <a href = "/profile/edit">Edit post</a>
+                    {{/if}}
+                    <a href = "/profile/settings">Settings</a>
+                </div>
+            </div>
             <form action="/logout?_method=DELETE" method = "POST">
                 <button type = "submit">Log out</button>
             </form>

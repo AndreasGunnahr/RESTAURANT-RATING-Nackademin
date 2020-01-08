@@ -1,16 +1,17 @@
 @import '_global';
 .main__container{
-    display: grid;
-    grid-template-columns: 240px 1fr;
     background: $dark-dark-blue;
     .main__content{
-        height: calc(100vh - 80px);
-        grid-column: 2;
-        padding: 3%;
+        height: 100%;
+        min-height: calc(100vh - 80px);
+        padding: 40px;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
         .edit__container{
-            height: 100%;
-            .header__container{
+            width: 100%;
+            max-width: 1400px;
+        .header__container{
                 h1{
                     font-family: $header-font;
                     color: $white;
@@ -21,7 +22,7 @@
                 }
             }
             .editCard__container{
-                height: 100%;
+                max-height: 900px;
                 overflow-y: scroll;
             }
         }

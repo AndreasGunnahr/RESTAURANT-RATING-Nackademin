@@ -1,7 +1,8 @@
 @import '_global';
 
 .main__container{
-    height: calc(100vh - 80px);
+    height: 100%;
+    min-height: calc(100vh - 80px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3,1fr);

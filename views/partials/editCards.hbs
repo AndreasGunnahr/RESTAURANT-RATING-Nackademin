@@ -3,19 +3,19 @@
         <img src = "/uploads/{{this.img}}">
         <div class = "info__container">
             <div class = "top">
-                <h1>{{this.title}}</h1>
+                <h1 class = "card__title">{{this.title}}</h1>
                 <div class="star__container">
                     <a class="fas fa-star s1"></a>
                     <a class="fas fa-star s2"></a>
                     <a class="fas fa-star s3"></a>
                     <a class="fas fa-star s4"></a>
                     <a class="fas fa-star s5"></a>
+                    {{#if this.scoreRating}}
+                        <h1 class = "average">{{this.scoreRating}}</h1>
+                    {{else}}
+                        <h1 class = "average">0</h1>
+                    {{/if}}
                 </div>
-                 {{#if this.scoreRating}}
-                <h1 class = "average">{{this.scoreRating}}</h1>
-                {{else}}
-                    <h1 class = "average">0</h1>
-                {{/if}}
                 {{#if this.nrOfComments}}
                     <a class = "comments"><i class="fas fa-comments"></i>{{this.nrOfComments}} comments</a>
                 {{else}}
