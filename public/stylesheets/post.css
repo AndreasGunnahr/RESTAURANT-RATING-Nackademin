@@ -176,6 +176,7 @@ body {
   align-items: center;
   direction: rtl;
   margin-bottom: 1px;
+  margin-left: 5px;
 }
 
 .main__post .comment__container .showComment__container .comment .header .commentStars__container a {
@@ -402,16 +403,16 @@ body {
   .main__post .comment__container .post__container .comment__section input {
     font-size: 1.2rem;
     width: 100%;
-    height: 50px;
+    height: 45px;
   }
   .main__post .comment__container .post__container .comment__section button {
     width: 140px;
-    height: 50px;
+    height: 45px;
     font-size: 1.1rem;
   }
   .main__post .comment__container .post__container .signPost {
     width: 100%;
-    height: 50px;
-    font-size: 2rem;
+    height: 45px;
+    font-size: 1.4rem;
   }
 }

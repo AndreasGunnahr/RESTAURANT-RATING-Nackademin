@@ -527,7 +527,7 @@ nav{
             max-width: 250px;
         }
         .info__container{
-            padding-left: 0;
+            padding: 5%;
             justify-content: center;
             align-items: center;
             .card__title{
@@ -649,6 +649,30 @@ nav{
         }
     }
 }
+@media screen and (max-width: 535px){
+    nav{
+        .logo{
+            h1{
+                display: none;
+            }
+        }
+        ul{
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            a{
+                font-size: 1.3rem;
+            }
+            button{
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px){
+   
+}
 
 @media screen and (max-width: 620px){
     .card__container,
@@ -664,9 +688,6 @@ nav{
 
 
 @media screen and (max-width: 479px){
-    nav{
-        display: none;
-    }
     .card__container,
     .editCard{
         height: 175px;
@@ -764,13 +785,13 @@ nav{
             max-width: 100%;
             margin-bottom: 20px;
             a{
-                font-size: .9rem;
+                font-size: 1.1rem;
                 padding: 10px;
                 &:nth-child(2){
                     margin: 0 0 0 10px;
                 }
                 i{
-                    font-size: 1rem;
+                    font-size: 1.2rem;
                     margin-right: 5px;
                 }
             }

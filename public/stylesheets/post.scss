@@ -103,7 +103,7 @@
             .comment{
                 margin-top: 5px;
                 .header{
-                    display: flex;;
+                    display: flex;
                     img{
                         height: 30px;
                         width: 30px;
@@ -119,7 +119,6 @@
                         color: black;
                     }
                     span{
-                        // width: 150px;
                         display: flex;
                         align-items: center;
                         height: 30px;
@@ -135,6 +134,7 @@
                         align-items: center;
                         direction: rtl;
                         margin-bottom: 1px;
+                        margin-left: 5px;
                         a{
                             font-size: 1.25rem;
                             color: $yellow;
@@ -351,18 +351,18 @@
                     input{
                         font-size: 1.2rem;
                         width: 100%;
-                        height: 50px;
+                        height: 45px;
                     }
                     button{
                         width: 140px;
-                        height: 50px;
+                        height: 45px;
                         font-size: 1.1rem;
                     } 
                 }
                 .signPost{
                     width: 100%;
-                    height: 50px;
-                    font-size: 2rem;
+                    height: 45px;
+                    font-size: 1.4rem;
                 }
             }
         }
