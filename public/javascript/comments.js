@@ -32,7 +32,7 @@ if(commentBTN){
         document.getElementById('comment-input').value = "";
         commentCONTAINER.scrollTop = commentCONTAINER.scrollHeight;
         $.ajax({
-            url: 'https://rate-your-restaurant.herokuapp.com/post/comment',
+            url: '/post/comment',
             type: 'POST',
             dataType : 'json',
             data: {
@@ -43,14 +43,13 @@ if(commentBTN){
                 stars: counter
             }
         }).done(function(data){
-            console.log("här")
             commentBTN.disabled = true;
             stars.forEach(star => {
                 star.style.color = "#A3B4D3";
             });
         });
         $.ajax({
-            url: 'https://rate-your-restaurant.herokuapp.com/post/rating',
+            url: '/post/rating',
             type: 'POST',
             data: {
                 score: counter.length,
